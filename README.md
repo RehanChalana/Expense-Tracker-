@@ -17,8 +17,8 @@ Bonus Features:
 - Add local storage support for data persistence.
 
 #what we need to add on this project/basic html structure
-1.continuously Balance showing 
-2.Add Transaction Budget
-3.A big space listing all the transactions (can be scrolled)
+1.continuously Balance showing <br>
+2.Add Transaction Budget <br>
+3.A big space listing all the transactions (can be scrolled)<br>
 4.Add money button 
 
