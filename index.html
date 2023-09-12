@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="./style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
@@ -10,16 +11,19 @@
         <h2>Expense Tracker</h2>
     </div>
 
+<div class="container">
+    <h3 id="db">Dashboard</h3>
     <div class="dashboard">
-        <h3>Dashboard</h3>
+        
+
+        <div id="col1">
         <div class="graph">
-            70%
+            <div class="progress-bar">
+                <progress value="75" min="0" max="100" style="visibility:hidden;height:0;width:0;">75%</progress>
+              </div>
         </div>
-        <div class="balanace">
-            <h1>Balance</h1>
-            <h2> Rs 1,000.00</h2>
-        </div>
-        <div class="addTrans">
+
+        <div class="addTrans flex">
             <h2>Add Transaction</h2>
             <h4>Amount</h4>
             <input type="number">
@@ -30,25 +34,44 @@
             <input type="date">
             <button>Add Transaction</button>
         </div> 
-
-        <div class="expense">
-            <h2>Expense</h2>
-            <h3>Rs 900</h3>
         </div>
 
-        <div class="inBalanace">
-            <h2>Initial</h2>
-            <h3>Rs 1900</h3>
+        <div id="col2"> 
+
+            <div id="balance">
+                <h2 id="blctext"> Your Balance</h2>
+                <h1 id="blcAmount"> Rs 1,000,00.00</h1>
+            </div>
+
+        
+            <div class="exin flex">
+                <div class="expense">
+                    <h3>Expense</h3>
+                    <h2>Rs 1900.00</h2>
+                </div>
+
+                <div class="inBalance">
+                    <h3>Initial</h3>
+                    <h2>Rs 1900.00</h2>
+                </div>
+
+            </div>
+
+            <div class="history">
+                History
+            </div>
+
         </div>
 
-        <div class="history">
-            History
-        </div>
-
-        <div class="footer">
-            footer
-        </div>
+        
     </div>
+
+ 
+
+</div>    
     
+<div class="footer">
+    footer
+</div>
 </body>
 </html>
