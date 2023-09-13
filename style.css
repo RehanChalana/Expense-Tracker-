@@ -6,7 +6,7 @@
 }
 
  div {
-    border-style:dotted ;
+    border: solid red ;
  }
 
 .header {
@@ -18,7 +18,16 @@
 
 }
 
+#col1 {
+    /* flex-grow: 1; */
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+}
+
 .progress-bar {
+    padding: 16px;
     width: 220px;
     height: 220px;
     border-radius: 50%;
@@ -34,7 +43,8 @@
 
 .dashboard {
     display: flex;
-    gap:40px;
+    gap:70px;
+    justify-content: space-evenly;
 }
 
 .flex {
@@ -46,10 +56,13 @@
 }
 
 #col2 {
-    /* flex-grow:1 ; */
+    flex-grow:3 ;
     display: flex;
     flex-direction: column;
-    gap:16px;
+    gap:24px;
+    max-width: 500px;
+    flex-shrink: 0;
+    
 }
  
 #balance {
@@ -81,12 +94,41 @@
     padding-bottom: 28px;
     padding-left: 16px;
     padding-right: 16px;
-    flex-shrink: 1;
+    flex: 1;
+    /* flex-shrink: 1; */
 }
 
 h2 {
     font-size: xx-large;
 }
+
+.addTrans{
+    align-self: stretch;
+    padding: 20px;
+    /* width: 100%; */
+    background-color: aqua;
+    gap: 8px;
+}
+
+.addTrans > input,select,button {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 8px;
+    padding-right: 8px;
+    margin-top: 3px;
+}
+
+
+
+.addTrans > label {
+    font-size: small;
+}
+
+.addTrans > h2 {
+    font-size: large;
+    margin-bottom: 10px;
+}
+
 
 
 
