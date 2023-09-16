@@ -191,13 +191,61 @@ h2 {
 }
 
 .addTrans > button {
+    opacity: 0.75;
     background-color: #720e9e;
     color: white;
     font-size: larger;
     font-weight: 700;
     margin-top: 18px
+    
 }
 
+.history > h2 {
+    font-size: x-large;
+    padding-bottom: 8px;
+    border-bottom: solid #720e9e 2px;
+}
+
+
+.entryContent {
+    margin-top: 20px;
+    background-color: black;
+    color: white;
+    opacity: 0.8;
+    border: solid white 1px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.leftEntry,.rightEntry {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+}
+
+#entryTitle {
+    font-size: xx-large;
+    font-weight: 700;
+    color: #9932cc;
+}
+
+#entryAmount {
+    color: #D22B2B;
+    font-size: xx-large;
+    font-weight: 700;
+}
+
+#entryDate {
+    font-size: small;
+    align-self: flex-end;
+}
+
+#entryCategory {
+    padding-left: 3px;
+    font-size: medium;
+}
 .footer {
     padding-top: 20px;
     padding-bottom: 20px;
