@@ -22,12 +22,15 @@
         <div id="col1">
         <div class="graph">
             <div class="progress-bar">
-                <progress value="75" min="0" max="100" style="visibility:hidden;height:0;width:0;">75%</progress>
+                <progress value="75" min="0" max="100" style="visibility:hidden;height:0;width:0;"><div>70%</div></progress>
               </div>
         </div>
 
         <div class="addTrans flex">
             <h2>Add Expense</h2>
+            <label>Expense Title:</label>
+            <input type="text" placeholder="Enter your expense Title">
+            
             <label>Expense Amount:</label>
             <input type="number" placeholder="Enter your Expense amount">
             <label>Select Category:</label>
@@ -35,8 +38,6 @@
                 <option>Travel</option>
                 <option>Snacks</option>
             </select>
-            <label>Description:</label>
-            <input type="text" placeholder="Enter your expense Desc.">
             <label>Expense Date:</label>
             <input type="date">
             <button>Add Transaction</button>
@@ -84,6 +85,27 @@
                          
                     </div>
                 </div>
+
+                <div id="entry2">
+                    <div class="entryContent">
+                        <div class="rightEntry">
+                        <h3 id="entryTitle">Title</h3>
+                        <h4 id="entryCategory">Category</h4>
+                        </div>
+
+                        <div class="leftEntry">
+                        
+                        <h3 id="entryAmount">Rs 100.00</h3>
+                        <p id="entryDate">10-08-2023</p>
+                        
+                        
+                         </div>
+                         
+                    </div>
+                </div>
+
+
+                
             </div>
 
         </div>
