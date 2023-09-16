@@ -21,7 +21,11 @@
     justify-content: center;
     font-size: x-large;
     padding: 10px;
+    border-bottom: solid #720e9e 2px ;
 }
+
+
+
 
 #dbheading {
     display: flex;
@@ -47,19 +51,21 @@
     gap: 24px;
     align-items: center;
 }
-
+.graph {
+    padding: 10px;
+}
 .progress-bar {
+    /* padding: 16px 20px 16px 20px; */
     padding: 16px;
     width: 220px;
     height: 220px;
     border-radius: 50%;
     background: 
       radial-gradient(closest-side, black 79%, transparent 80% 100%),
-      conic-gradient(hotpink 75%, pink 0);    
+      conic-gradient(#720e9e 70%, white 0);    
   }
 
 .container {
-    
     max-width: 990px;
     margin: auto;
 }
@@ -137,8 +143,9 @@ h2 {
 .addTrans{
     align-self: stretch;
     padding: 20px;
-    background-color: aqua;
+    /* background-color: aqua; */
     gap: 8px;
+    border:solid white ;
 }
 
 .addTrans > input,select,button {
@@ -149,15 +156,30 @@ h2 {
     margin-top: 3px;
 }
 
-
+.addTrans > input,select,option,button {
+    color: black;
+}
 
 .addTrans > label {
-    font-size: small;
+    font-size: mediums;
 }
 
 .addTrans > h2 {
-    font-size: large;
+    font-size: x-large;
     margin-bottom: 10px;
+}
+
+.addTrans > button {
+    background-color: #720e9e;
+    color: white;
+    font-size: larger;
+    font-weight: 700;
+    margin-top: 18px
+}
+
+.footer {
+    margin-top: 20px;
+    border-top: solid #720e9e 2px;
 }
 
 
