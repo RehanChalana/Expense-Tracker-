@@ -35,13 +35,25 @@
     padding : 25px 10px 25px 10px ;
 }
 
+/* #dbheading > p {
+    color: #710193 ;
+    font-size: large;
+    font-weight: 700;
+} */
+
 #hello {
     margin-left: 3px ;
+    color: #710193 ;
+    font-size: large;
+    font-weight: 700;
 }
 
+
 #db {
-    font-size: 40px;
+    color: white;
+    font-size: 50px;
     font-weight: 700;
+    opacity: 0.8;
 }
 
 #col1 {
@@ -156,8 +168,16 @@ h2 {
     margin-top: 3px;
 }
 
-.addTrans > input,select,option,button {
+/* .addTrans > input,select,option,button {
     color: black;
+}*/
+
+.addTrans > input,select {
+    background-color: black;
+    color: white;
+    opacity: 0.8;
+    border: solid #720e9e 1px;
+    font-size: medium;
 }
 
 .addTrans > label {
@@ -167,6 +187,7 @@ h2 {
 .addTrans > h2 {
     font-size: x-large;
     margin-bottom: 10px;
+    color: #9932cc;
 }
 
 .addTrans > button {
@@ -178,8 +199,13 @@ h2 {
 }
 
 .footer {
+    padding-top: 20px;
+    padding-bottom: 20px;
     margin-top: 20px;
     border-top: solid #720e9e 2px;
+    font-size: medium;
+    display: flex;
+    justify-content: center;
 }
 
 
