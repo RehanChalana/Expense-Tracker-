@@ -1,129 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="./style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pocket DeX</title>
+    <title>start</title>
+    <link rel="stylesheet" href="./index.css">
 </head>
 <body>
-    <div class="header">
-        <h2 id="mainTitle">Pocket DeX</h2>
+    <div class="detailBox">
+        <div class="inputBox">
+            <h2>Wallet Details</h2>
+            <label>Wallet Name</label>
+            <input type="text" placeholder="RC's Wallet">
+            <label>Set/Change Budget</label>
+            <input type="number" placeholder="Rs 0000.00">
+            <label>Password</label>
+            <input type="password" placeholder="enter your password">
+            <a href="./DashBoard.html"><button>Submit</button></a>
+        </div>
     </div>
-
-<div class="container">
-        <div id="dbheading">
-            <div id="dbLeft">
-                <h3 id="db">Dashboard</h3>
-                <p id="hello">Hello, Welcome back</p>
-            </div>
-            <a href="./start.html" target="_self"><img src="./images/icone-de-portefeuille-d-argent-violet.png"></a>
-        </div>
-
-        
-
-        <div class="dashboard">
-        <div id="col1">
-        <div class="graph">
-            <div class="progress-bar">
-                <progress value="75" min="0" max="100" style="visibility:hidden;height:0;width:0;"><div>70%</div></progress>
-              </div>
-        </div>
-
-        <div class="addTrans flex">
-            <h2>Add Expense</h2>
-            <label>Expense Title:</label>
-            <input type="text" placeholder="Enter your expense Title">
-            
-            <label>Expense Amount:</label>
-            <input type="text" class="expenseInput" placeholder="Enter your Expense amount">
-            <label>Select Category:</label>
-            <select>
-                <option>Travel</option>
-                <option>Snacks</option>
-            </select>
-            <label>Expense Date:</label>
-            <input type="date">
-            <button onclick="findInput(); addExpense(); showAnswer();">Add Transaction</button>
-        </div> 
-        </div>
-
-        <div id="col2"> 
-
-            <div id="balance">
-                <h2 id="blctext"> Your Balance</h2>
-                <h1 id="blcAmount"> Rs 1,000,00.00</h1>
-            </div>
-
-        
-            <div class="exin flex">
-                <div class="expense">
-                    <h3>Expense</h3>
-                    <span>Rs </span><span class="expenseValue">0000.00</span>
-                </div>
-
-                <div class="inBalance">
-                    <h3>Budget</h3>
-                    <h2>Rs 1900.00</h2>
-                </div>
-
-            </div>
-
-            <div class="history">
-                <h2>Expense History</h2>
-
-                <div id="entry">
-                    <div class="entryContent">
-                        <div class="rightEntry">
-                        <h3 id="entryTitle">Title</h3>
-                        <h4 id="entryCategory">Category</h4>
-                        </div>
-
-                        <div class="leftEntry">
-                        
-                        <h3 id="entryAmount">Rs 100.00</h3>
-                        <p id="entryDate">10-08-2023</p>
-                        
-                        
-                         </div>
-                         
-                    </div>
-                </div>
-
-                <div id="entry2">
-                    <div class="entryContent">
-                        <div class="rightEntry">
-                        <h3 id="entryTitle">Title</h3>
-                        <h4 id="entryCategory">Category</h4>
-                        </div>
-
-                        <div class="leftEntry">
-                        
-                        <h3 id="entryAmount">Rs 100.00</h3>
-                        <p id="entryDate">10-08-2023</p>
-                        
-                        
-                         </div>
-                         
-                    </div>
-                </div>
-
-
-                
-            </div>
-
-        </div>
-
-        
-    </div>
-
- 
-
-</div>    
-    
-<div class="footer">
-    Copyright 	&#169; Rehan Ridham Rishav
-</div>
 </body>
-<script src="script.js"></script>
 </html>
