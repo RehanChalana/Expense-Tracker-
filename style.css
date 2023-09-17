@@ -125,6 +125,11 @@
     font-weight: 560;
 }
 
+span {
+    font-size: xx-large;
+    font-weight: bold;
+}
+
 .exin {
     display: flex;
     justify-content: space-between;

@@ -32,7 +32,7 @@
             <input type="text" placeholder="Enter your expense Title">
             
             <label>Expense Amount:</label>
-            <input type="number" placeholder="Enter your Expense amount">
+            <input type="text" class="expenseInput" placeholder="Enter your Expense amount">
             <label>Select Category:</label>
             <select>
                 <option>Travel</option>
@@ -40,7 +40,7 @@
             </select>
             <label>Expense Date:</label>
             <input type="date">
-            <button>Add Transaction</button>
+            <button onclick="findInput(); addExpense(); showAnswer();">Add Transaction</button>
         </div> 
         </div>
 
@@ -55,7 +55,7 @@
             <div class="exin flex">
                 <div class="expense">
                     <h3>Expense</h3>
-                    <h2>Rs 19006.00</h2>
+                    <span>Rs </span><span class="expenseValue"></span>
                 </div>
 
                 <div class="inBalance">
@@ -121,4 +121,5 @@
     Copyright 	&#169; Rehan Ridham Rishav
 </div>
 </body>
+<script src="script.js"></script>
 </html>
