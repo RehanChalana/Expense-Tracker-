@@ -5,10 +5,6 @@
     color: white; 
 }
 
- div {
-    /* border: solid yellow ; */
- }
-
  body {
     background-image: url(./images/black-elegant-background-with-copy-space.jpg);
     background-repeat: no-repeat;
@@ -128,7 +124,14 @@ a>img {
     /* background-color: lightgreen; */
     margin-top: 28px;
     padding: 50px 24px 50px 24px ;
+    border-radius: 18px;
     
+}
+
+#balance:hover{
+    background-color: #4FB755  ;
+    box-shadow: 2px 2px 16px 4px #62BF68 ;
+    /*  #3CB371 #FAF9F6 */
 }
 
 
@@ -159,11 +162,26 @@ span {
     padding-left: 20px;
     padding-right: 20px;
     flex: 1;
+    border-radius: 15px;
+    
     /* flex-shrink: 1; */
+}
+
+.expense:hover , .inBalance:hover {
+    box-shadow: 2px 2px 10px #FAF9F6 ;
+    cursor: pointer;
 }
 
 .expense {
     background-color: #D22B2B   ;
+}
+
+.expense:hover {
+    background-color: #FA5F55;
+}
+
+.inBalance:hover {
+    background-color: #7852A9;
 }
 
 .inBalance {
@@ -269,6 +287,8 @@ h2 {
     padding-left: 3px;
     font-size: medium;
 }
+
+
 .footer {
     padding-top: 20px;
     padding-bottom: 20px;

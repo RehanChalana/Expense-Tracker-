@@ -33,18 +33,17 @@
         <div class="addTrans flex">
             <h2>Add Expense</h2>
             <label>Expense Title:</label>
-            <input type="text" placeholder="Enter your expense Title">
-            
+            <input type="text" id="expTitle" class="expenseTitle" placeholder="Enter your expense Title">
             <label>Expense Amount:</label>
-            <input type="text" class="expenseInput" placeholder="Enter your Expense amount">
+            <input type="number" id="expAmount" class="expenseInput" placeholder="Enter your Expense amount">
             <label>Select Category:</label>
-            <select>
+            <select id="category" class="category">
                 <option>Travel</option>
                 <option>Snacks</option>
             </select>
             <label>Expense Date:</label>
-            <input type="date">
-            <button onclick="findInput(); addExpense(); showAnswer();">Add Transaction</button>
+            <input type="date" id="date" class="date">
+            <button id="addExpense" onclick="findInput(); addExpense(); showAnswer(); changeBalance(); history();">Add Transaction</button>
         </div> 
         </div>
 
@@ -52,19 +51,19 @@
 
             <div id="balance">
                 <h2 id="blctext"> Your Balance</h2>
-                <h1 id="blcAmount"> Rs 1,000,00.00</h1>
+                <h1 class="blcAmount" id="blcAmount"> Rs 1,000,00.00</h1>
             </div>
 
         
             <div class="exin flex">
                 <div class="expense">
                     <h3>Expense</h3>
-                    <span>Rs </span><span class="expenseValue">0000.00</span>
+                    <span>Rs </span><span  id="expenseAmount" class="expenseValue">0000.00</span>
                 </div>
 
                 <div class="inBalance">
                     <h3>Budget</h3>
-                    <h2>Rs 1900.00</h2>
+                    <h2 id="budget"> Rs 1,000,00.00</h2>
                 </div>
 
             </div>
@@ -75,22 +74,27 @@
                 <div id="entry">
                     <div class="entryContent">
                         <div class="rightEntry">
-                        <h3 id="entryTitle">Title</h3>
+                        <h3 id="entryTitle">Dummy Entry</h3>
                         <h4 id="entryCategory">Category</h4>
                         </div>
 
                         <div class="leftEntry">
                         
-                        <h3 id="entryAmount">Rs 100.00</h3>
-                        <p id="entryDate">10-08-2023</p>
+                        <h3 id="entryAmount">Rs 0000.00</h3>
+                        <p id="entryDate">YYYY-MM-DD</p>
                         
                         
                          </div>
                          
                     </div>
                 </div>
+                
+                
+                    
+                   
+        
 
-                <div id="entry2">
+                <!-- <div id="entry2">
                     <div class="entryContent">
                         <div class="rightEntry">
                         <h3 id="entryTitle">Title</h3>
@@ -106,7 +110,7 @@
                          </div>
                          
                     </div>
-                </div>
+                </div> -->
 
 
                 
