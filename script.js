@@ -4,8 +4,8 @@
 
 var finalExpense = '';
 Balance = 100000.00 ;
-// let expenseHTML = JSON.parse(localStorage.getItem('history'))|| [];
-history();
+let expenseHTML = JSON.parse(localStorage.getItem('history'))|| [];
+// history();
 
 // JSON.parse(localStorage.getItem('finalExpense'))||
 
