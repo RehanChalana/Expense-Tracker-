@@ -1,19 +1,17 @@
 
-// arsh script
-
 
 var finalExpense = '';
 Balance = 100000.00 ;
-let expenseHTML = JSON.parse(localStorage.getItem('history'))|| [];
+expenseHTML = JSON.parse(localStorage.getItem('history'))|| [];
 // history();
 
 // JSON.parse(localStorage.getItem('finalExpense'))||
 
 function findInput() {
-    const inputElement = document.querySelector('.expenseInput');
-    const expense = inputElement.value;
+    const inputElement = document.querySelector('.expenseInput').value;
+    // const expense = inputElement.value;
     saveCalculation();
-    return expense;
+    return inputElement;
 };
 
 function changeBalance() {
