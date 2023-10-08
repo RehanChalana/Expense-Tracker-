@@ -1,9 +1,10 @@
 
 
 var finalExpense = '';
-Balance = 100000.00 ;
+var Balance = 100000;
 expenseHTML = JSON.parse(localStorage.getItem('history'))|| [];
 // history();
+saveCalculation();
 
 // JSON.parse(localStorage.getItem('finalExpense'))||
 
