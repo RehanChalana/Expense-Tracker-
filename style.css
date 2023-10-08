@@ -11,6 +11,11 @@
     background-size: cover;
  }
 
+ #logo:hover {
+    cursor: pointer;
+    box-shadow: 2px 2px 10px #9932cc
+ }
+
 .header {
     display: flex;
     align-items: center;
@@ -115,8 +120,7 @@ a>img {
     flex-direction: column;
     gap:28px;
     max-width: 550px;
-    flex-shrink: 0;
-    
+    flex-shrink: 0; 
 }
  
 #balance {
@@ -131,6 +135,7 @@ a>img {
 #balance:hover{
     background-color: #4FB755  ;
     box-shadow: 2px 2px 16px 4px #62BF68 ;
+    cursor: pointer;
     /*  #3CB371 #FAF9F6 */
 }
 
@@ -146,8 +151,16 @@ a>img {
 }
 
 span {
-    font-size: xx-large;
     font-weight: bold;
+    /* font-size: xx-large; */
+}
+
+.blcRs{
+    font-size: 52px;
+}
+
+.expRc{
+    font-size: xx-large;
 }
 
 .exin {
@@ -168,7 +181,6 @@ span {
 }
 
 .expense:hover , .inBalance:hover {
-    box-shadow: 2px 2px 10px #FAF9F6 ;
     cursor: pointer;
 }
 
@@ -177,11 +189,17 @@ span {
 }
 
 .expense:hover {
-    background-color: #FA5F55;
+    background-color: #E35335;
+    box-shadow: 2px 2px 10px #E35335;
+}
+
+#expenseAmount {
+    font-size: xx-large;
 }
 
 .inBalance:hover {
-    background-color: #7852A9;
+    background-color: #9932cc;
+    box-shadow: 2px 2px 10px #9932cc ;
 }
 
 .inBalance {

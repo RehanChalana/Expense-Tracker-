@@ -17,7 +17,7 @@
                 <h3 id="db">Dashboard</h3>
                 <p id="hello">Hello, Welcome back</p>
             </div>
-            <a href="./index.html" target="_self"><img src="./images/icone-de-portefeuille-d-argent-violet.png"></a>
+            <a href="./index.html" target="_self1"><img id="logo" src="./images/icone-de-portefeuille-d-argent-violet.png"></a>
         </div>
 
         
@@ -41,6 +41,11 @@
                 <option disabled selected value> -- select an option -- </option>
                 <option>Travel</option>
                 <option>Snacks</option>
+                <option>Clothing</option>
+                <option>Educational</option>
+                <option>Food</option>
+                <option>Tech Expenses</option>
+                <option>Subscriptions</option>
             </select>
             <label>Expense Date:</label>
             <input type="date" id="date" class="date">
@@ -52,19 +57,19 @@
 
             <div id="balance">
                 <h2 id="blctext"> Your Balance</h2>
-                <h1 class="blcAmount" id="blcAmount"> Rs 1,000,00.00</h1>
+                <span class="blcRs">Rs </span><span class="blcAmount" id="blcAmount">100000.00</span>
             </div>
 
         
             <div class="exin flex">
                 <div class="expense">
                     <h3>Expense</h3>
-                    <span>Rs </span><span  id="expenseAmount" class="expenseValue">0000.00</span>
+                    <span class="expRc">Rs </span><span  id="expenseAmount" class="expenseValue">0000.00</span>
                 </div>
 
                 <div class="inBalance">
                     <h3>Budget</h3>
-                    <h2 id="budget"> Rs 1,000,00.00</h2>
+                    <h2 id="budget">Rs 100000.00</h2>
                 </div>
 
             </div>

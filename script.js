@@ -68,7 +68,6 @@ function history() {
                 `;
 
         expenseHTML = html;
-    
 
     document.querySelector('.history')
         .innerHTML += expenseHTML;
