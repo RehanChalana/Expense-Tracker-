@@ -1,5 +1,4 @@
 
-
 var finalExpense = '';
 var Balance = 100000;
 expenseHTML = JSON.parse(localStorage.getItem('history'))|| [];
