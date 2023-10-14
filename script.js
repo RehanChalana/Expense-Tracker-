@@ -1,7 +1,22 @@
-
+// initializing variables 
+let title = document.querySelector('.expenseTitle');
+let category = document.querySelector('.category');
+let expense = document.querySelector('.expenseInput');
+let date = document.querySelector('.date');
+let hist = document.querySelector('.userEntries');
+let dummy = document.querySelector('.dummy');
 var finalExpense = '';
-var Balance = 100000;
-expenseHTML = JSON.parse(localStorage.getItem('history'))|| [];
+
+// prompting the budget
+var Balance = parseInt(prompt("SET BUDGET HERE!"));
+while(Balance<=0){
+    alert("Please Enter a Positive Balance");
+    Balance = parseInt(prompt("SET BUDGET HERE!"));
+}
+document.querySelector('.blcAmount').innerText = Balance;
+document.querySelector('#budget').innerText=Balance;
+
+// expenseHTML = JSON.parse(localStorage.getItem('history'))|| [];
 // history();
 saveCalculation();
 
@@ -41,24 +56,18 @@ function showAnswer() {
 
 // let expenseHTML = JSON.parse(localStorage.getItem('history'))|| [];
 function history() {
-    const title = document.querySelector('.expenseTitle').value;
-    const category = document.querySelector('.category').value;
-    const expense = document.querySelector('.expenseInput').value;
-    const date = document.querySelector('.date').value;
-
     const html = `
-
                 <div id="entry">
                     <div class="entryContent">
                         <div class="rightEntry">
-                        <h3 id="entryTitle"> ${title} </h3>
-                        <h4 id="entryCategory"> ${category} </h4>
+                        <h3 id="entryTitle"> ${title.value} </h3>
+                        <h4 id="entryCategory"> ${category.value} </h4>
                         </div>
 
                         <div class="leftEntry">
                         
-                        <h3 id="entryAmount">Rs ${expense}</h3>
-                        <p id="entryDate">${date}</p>
+                        <h3 id="entryAmount">Rs ${expense.value}</h3>
+                        <p id="entryDate">${date.value}</p>
                         
                         
                         </div>
@@ -66,16 +75,22 @@ function history() {
                     </div>
                 </div>
                 `;
+        dummy.innerHTML="";
+                
+    const entry = document.createElement('div');
+    entry.innerHTML = html;
+    hist.insertBefore(entry,hist.firstChild);
 
-        expenseHTML = html;
-
-    document.querySelector('.history')
-        .innerHTML += expenseHTML;
+    // document.querySelector('.history').innerHTML += html;
+    
     saveCalculation();
+    title.value="";
+    category.value="";
+    expense.value="";
+    date.value="";
 }
 
 function saveCalculation(){
     localStorage.setItem('finalExpense',finalExpense);
     localStorage.setItem('Balance',Balance);
-    localStorage.setItem('expenseHTML',expenseHTML);
 };

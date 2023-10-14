@@ -193,7 +193,7 @@ span {
     box-shadow: 2px 2px 10px #E35335;
 }
 
-#expenseAmount {
+#expenseAmount , #budget {
     font-size: xx-large;
 }
 
