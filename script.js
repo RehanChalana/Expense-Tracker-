@@ -6,6 +6,7 @@ let date = document.querySelector('.date');
 let hist = document.querySelector('.userEntries');
 let dummy = document.querySelector('.dummy');
 var finalExpense = '';
+let entryCount = 0;
 
 // prompting the budget
 var Balance = parseInt(prompt("SET BUDGET HERE!"));
@@ -75,22 +76,26 @@ function history() {
                     </div>
                 </div>
                 `;
-        dummy.innerHTML="";
-                
+    dummy.innerHTML="";             
     const entry = document.createElement('div');
     entry.innerHTML = html;
     hist.insertBefore(entry,hist.firstChild);
-
+    entryCount++;
     // document.querySelector('.history').innerHTML += html;
-    
+    emptyInput();
     saveCalculation();
-    title.value="";
-    category.value="";
-    expense.value="";
-    date.value="";
 }
 
 function saveCalculation(){
     localStorage.setItem('finalExpense',finalExpense);
     localStorage.setItem('Balance',Balance);
 };
+
+function emptyInput(){
+    title.focus()
+    title.value="";
+    category.value="";
+    expense.value="";
+    date.value="";
+}
+

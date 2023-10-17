@@ -1,0 +1,33 @@
+*{
+    font-family: 'poppins',sans-serif;
+    color: white; 
+}
+
+body{
+    margin: 0;
+    background-image: url(./images/black-elegant-background-with-copy-space.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+div{
+    border: solid 2px red;
+}
+
+
+.timeHeader,.scroll{
+    display: flex;
+    justify-content: center;
+}
+
+.timeHeader{
+    font-size: 50px;
+}
+
+.timeHeader > div{
+    padding: 10px 100px 10px 100px;
+}
+
+.scroll > div{
+    padding: 10px 100px 10px 100px;
+}
