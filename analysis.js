@@ -1,18 +1,29 @@
-var xValues = ["Italy", "France", "Spain", "USA", "Argentina"];
-var yValues = [55, 49, 44, 24, 15];
+var xValues = ["19jan", "20jan", "21jan", "Yesterday", "Today"];
+var yValues = [1500,1700,2000,1800,1700];
 var barColors = ["red", "green","blue","orange","brown"];
 
+Chart.defaults.backgroundColor = '#720e9e';
+Chart.defaults.color = '#720e9e';
 new Chart("myChart", {
   type: "bar",
   data: {
     labels: xValues,
     datasets: [{
-      backgroundColor: barColors,
-      data: yValues
-    }]
-  },
-  options: { legend: {display: false},
+    data: yValues,
+    backgroundColor:'#720e9e',
+    color:'#FFFFFF',
+    }]},
+  options: { 
+  scales:{
+    x:{
+      grid:{
+        color:'white'
+      }
+    }
+  },  
+  legend: {display: false},
   title: {
         display: true,
-        text: "World Wine Production 2018"}
+        text: "Day Wise Spends"},
+       
 }});

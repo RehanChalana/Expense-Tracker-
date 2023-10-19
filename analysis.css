@@ -5,29 +5,106 @@
 
 body{
     margin: 0;
-    background-image: url(./images/black-elegant-background-with-copy-space.jpg);
+    /* background-image: url(./images/black-elegant-background-with-copy-space.jpg); */
     background-repeat: no-repeat;
     background-size: cover;
+    background-color: #212529;
 }
 
+/* s */
+/* 
 div{
-    border: solid 2px red;
+    border: 2px red solid;
+} */
+
+.analysis{
+    display: flex;
+    flex-direction: column;
+    max-width: 970px;
+    margin: auto;
 }
 
 
-.timeHeader,.scroll{
+.dmy{
     display: flex;
     justify-content: center;
 }
 
-.timeHeader{
+.dmy{
     font-size: 50px;
+    /* border: solid 1px black; */
 }
 
-.timeHeader > div{
-    padding: 10px 100px 10px 100px;
+.dmy > div{
+    border-top:2px solid #1b1f22 ;
+    border-bottom:2px solid #1b1f22 ;
 }
 
-.scroll > div{
+.scrollContainer{
+    padding: 20px 0 20px 0;
+    background-color: #333;
+}
+
+
+.scrollElements{
+    display: flex;
+    overflow: auto;
+    white-space: nowrap;
+}
+
+
+
+.scrollElements::-webkit-scrollbar {
+    display: none;
+}
+
+.scrollElements > div{
+    padding: 10px 50px 10px 50px;
+    color: white;
+    border: 2px solid white;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 15px;
+}
+
+.scrollElements > div:hover{
+    background-color: #720e9e;
+    color: black;
+    cursor: pointer;
+}
+
+#today{
+    background-color: #720e9e;
+    color: black;
+}
+
+
+.dmy > div:hover{
+    background-color:#343a40 ;
+}
+
+.mainGraph{
+    border-top:solid 2px #720e9e ;
+    border-bottom:solid 2px #720e9e ;
+    padding: 40px 100px 40px 100px;
+}
+
+#dayHead{
+    border-right: solid 4px  #720e9e ;
+    border-left: 2px solid #1b1f22;
+    padding: 10px 80px 10px 105px;
+}
+
+#weekHead{
+    border-right: solid 4px  #720e9e ;
     padding: 10px 100px 10px 100px;
+    
+}
+
+
+
+#monthHead{
+    padding: 10px 65px 10px 80px;
+    border-right: 2px solid #1b1f22;
+   
 }

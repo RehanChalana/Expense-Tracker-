@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Analysis</title>
     <link rel="stylesheet" href="./analysis.css">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
     <script src="./analysis.js" defer></script>
 </head>
@@ -13,20 +14,30 @@
         TITLE
     </div>
 
-    <div class="timeHeader">
+    <div class="analysis">
+
+    <div class="dmy">
         <div id="dayHead">DAY</div>
         <div id="weekHead">WEEK</div>
         <div id="monthHead">MONTH</div>
     </div>
 
-    <div class="scroll date">
-        <div>TODAY</div>
-        <div>YESTERDAY</div>
+    <div class="scrollContainer">
+
+    <div class="scrollElements ">
+        <div>10jan</div>
         <div>22jan</div>
+        <div>21jan</div>
+        <div>20jan</div>
+        <div>19jan</div>
+        <div>YESTERDAY</div>
+        <div id="today">TODAY</div>
     </div>
+</div>
+
 
     <div class="mainGraph">
-        <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+        <canvas id="myChart" style="width:100%;"></canvas>
 
     </div>
 
@@ -37,6 +48,8 @@
     <div class="detailHistory">
 
     </div>
+
+</div>
     
 </body>
 </html>
