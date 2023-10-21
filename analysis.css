@@ -1,14 +1,16 @@
 *{
     font-family: 'poppins',sans-serif;
     color: white; 
+    margin: 0;
+    padding: 0;
 }
 
 body{
     margin: 0;
-    /* background-image: url(./images/black-elegant-background-with-copy-space.jpg); */
-    background-repeat: no-repeat;
+    background-image: url(./images/black-elegant-background-with-copy-space.jpg);
+    background-repeat: repeat;
     background-size: cover;
-    background-color: #212529;
+    background-color: #040D12;
 }
 
 /* s */
@@ -20,29 +22,58 @@ div{
 .analysis{
     display: flex;
     flex-direction: column;
-    max-width: 970px;
+    max-width: 1050px;
     margin: auto;
+}
+
+.analysis > div {
+    align-items: center;
 }
 
 
 .dmy{
     display: flex;
-    justify-content: center;
-}
-
-.dmy{
+    justify-content: space-around;
     font-size: 50px;
-    /* border: solid 1px black; */
+    font-weight: bold ;
+   
 }
 
 .dmy > div{
-    border-top:2px solid #1b1f22 ;
-    border-bottom:2px solid #1b1f22 ;
+    opacity: 0.4;
+    transition: opacity 250ms ease-in; 
+}
+.dmy>div:hover{
+    opacity: 1;
+}
+
+
+ .dmy > div::after{
+    content: '';
+    display: block;
+    width: 0;    
+    height: 4px;
+    background: #720e9e;
+    transition: width 0.3s ease;
+} 
+
+
+
+
+.dmy > div:hover::after{
+    /* border-bottom: 4px solid #720e9e ; */
+    /* transform: scaleX(1); transform-origin: 100% 50%; */
+    width: 100%;
 }
 
 .scrollContainer{
+    margin-top: 10px;
+    margin-top: 1px;
     padding: 20px 0 20px 0;
-    background-color: #333;
+    border-top: #040D12 3px solid;
+    /* background-color: black; */
+    /* sopacity: 0.5; */
+
 }
 
 
@@ -61,50 +92,42 @@ div{
 .scrollElements > div{
     padding: 10px 50px 10px 50px;
     color: white;
-    border: 2px solid white;
+    border: 2px solid #6b6e71;
     margin-left: 20px;
     margin-right: 20px;
     border-radius: 15px;
+    background-color: #282828;
+    font-size: large;
+    transition: all 300ms ease;
 }
 
 .scrollElements > div:hover{
     background-color: #720e9e;
     color: black;
     cursor: pointer;
+    font-size: x-large;
+    font-weight: bolder;
+    border: 2px solid white ;
 }
 
 #today{
-    background-color: #720e9e;
+    background-color: #8333a9;
     color: black;
+    font-size: x-large;
+    border: 2px solid white ;
+    font-weight: bolder;
 }
 
 
-.dmy > div:hover{
-    background-color:#343a40 ;
-}
+
 
 .mainGraph{
     border-top:solid 2px #720e9e ;
     border-bottom:solid 2px #720e9e ;
-    padding: 40px 100px 40px 100px;
+    padding: 40px 10px 40px 10px;   
 }
 
-#dayHead{
-    border-right: solid 4px  #720e9e ;
-    border-left: 2px solid #1b1f22;
-    padding: 10px 80px 10px 105px;
+#myChart{
+    width: 100%;
 }
 
-#weekHead{
-    border-right: solid 4px  #720e9e ;
-    padding: 10px 100px 10px 100px;
-    
-}
-
-
-
-#monthHead{
-    padding: 10px 65px 10px 80px;
-    border-right: 2px solid #1b1f22;
-   
-}

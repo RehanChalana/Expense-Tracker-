@@ -26,7 +26,7 @@
         <div id="col1">
         <div class="graph">
             <div class="progress-bar">
-                <progress value="75" min="0" max="100" style="visibility:hidden;height:0;width:0;"><div>70%</div></progress>
+                <progress value="75" min="0" max="100" style="visibility:hidden;height:0;width:0;"></progress>
               </div>
         </div>
 
@@ -48,7 +48,7 @@
             </select>
             <label>Expense Date:</label>
             <input type="date" id="date" class="date">
-            <button id="addExpense" onclick="findInput(); addExpense(); showAnswer(); changeBalance(); history();">Add Transaction</button>
+            <button id="addExpense" onclick="findInput(); addExpense(); changeBalance(); history();  updateProgressBar();">Add Transaction</button>
         </div> 
         </div>
 
