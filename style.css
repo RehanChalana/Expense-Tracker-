@@ -4,6 +4,9 @@
     font-family: 'poppins',sans-serif;
     color: white; 
 }
+/* div{
+    border: 2px solid red;
+} */
 
  body {
     background-image: url(./images/black-elegant-background-with-copy-space.jpg);
@@ -90,15 +93,36 @@ a>img {
     width: 220px;
     height: 220px;
     border-radius: 70%;
+    /* position: relative;
+    top:-35px; */
     background-image: 
       radial-gradient(closest-side, black 79%, transparent 80%),
-      conic-gradient(#720e9e 0%, white 0);    
+      conic-gradient(#720e9e 0%, white 0);      
   }
+
+#graphPer{
+    position: relative;
+    z-index: 5;
+    top:76px;
+    left: 56px;
+    font-size: 60px;
+    transition: all 250ms ease;
+} 
+
+#graphPer:hover{
+    top:70px;
+    left: 48px;
+    font-weight: bolder;
+    font-size: 70px;
+    color: #9932cc;
+}
 
 .container {
     max-width: 990px;
     margin: auto;
 }
+
+
 
 .dashboard {
     display: flex;
