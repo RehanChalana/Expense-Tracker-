@@ -90,9 +90,9 @@ a>img {
     width: 220px;
     height: 220px;
     border-radius: 70%;
-    background: 
+    background-image: 
       radial-gradient(closest-side, black 79%, transparent 80%),
-      conic-gradient(#720e9e 70%, white 0);    
+      conic-gradient(#720e9e 0%, white 0);    
   }
 
 .container {
@@ -129,13 +129,14 @@ a>img {
     margin-top: 28px;
     padding: 50px 24px 50px 24px ;
     border-radius: 18px;
-    
+    transition: font-size 250ms ease;
 }
 
 #balance:hover{
     background-color: #4FB755  ;
     box-shadow: 2px 2px 16px 4px #62BF68 ;
     cursor: pointer;
+    font-size: 30px;
     /*  #3CB371 #FAF9F6 */
 }
 
@@ -149,6 +150,8 @@ a>img {
     font-size: 52px;
     font-weight: 560;
 }
+
+
 
 span {
     font-weight: bold;
@@ -167,6 +170,7 @@ span {
     display: flex;
     justify-content: space-between;
     gap:16px;
+    
 }
 
 .expense , .inBalance {
@@ -176,12 +180,14 @@ span {
     padding-right: 20px;
     flex: 1;
     border-radius: 15px;
+    transition: font-size 250ms ease-in;
     
     /* flex-shrink: 1; */
 }
 
 .expense:hover , .inBalance:hover {
     cursor: pointer;
+    font-size: 27px;
 }
 
 .expense {
@@ -216,6 +222,7 @@ h2 {
     /* background-color: aqua; */
     gap: 8px;
     border:solid white ;
+    
 }
 
 .addTrans > input,select,button {
@@ -224,7 +231,15 @@ h2 {
     padding-left: 8px;
     padding-right: 8px;
     margin-top: 3px;
+    transition: all 250ms ease-in;
+    max-width: 272px;
 }
+
+.addTrans > input:hover,select:hover,button:hover{
+    font-size: large;
+}
+
+
 
 /* .addTrans > input,select,option,button {
     color: black;
@@ -270,12 +285,15 @@ h2 {
     margin-top: 20px;
     background-color: black;
     color: white;
-    opacity: 0.8;
+    opacity: 0.6;
     border: solid white 1px;
     display: flex;
     justify-content: space-between;
     padding: 10px;
+    transition: all 250ms ease-in;
 }
+
+
 
 .leftEntry,.rightEntry {
     display: flex;
@@ -304,6 +322,17 @@ h2 {
 #entryCategory {
     padding-left: 3px;
     font-size: medium;
+}
+
+#entryTitle,#entryAmount,#entryCategory,#entryDate{
+    transition: all 250ms ease-in;
+}
+
+
+.entryContent:hover{
+    opacity: 1;
+    border: 2px solid #720e9e;
+    font-size: xx-large;
 }
 
 

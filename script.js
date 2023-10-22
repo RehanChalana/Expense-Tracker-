@@ -8,8 +8,11 @@ let dummy = document.querySelector('.dummy');
 var totalExpense = 0;
 let entryCount = 0;
 
+
+
 // prompting the budget
 var Balance = parseInt(prompt("SET BUDGET HERE!"));
+const BUDGET = Balance;
 while(Balance<=0){
     alert("Please Enter a Positive Balance");
     Balance = parseInt(prompt("SET BUDGET HERE!"));
@@ -66,16 +69,20 @@ function history() {
     entry.innerHTML = html;
     hist.insertBefore(entry,hist.firstChild);
     entryCount++;
+    
+    // document.querySelector('.progress-bar').style.setProperty('backgroundImage','radial-gradient(closest-side, black 79%, transparent 80%),conic-gradient(#720e9e 10%, white 0);');
     // document.querySelector('.history').innerHTML += html;
+
     emptyInput();
 }
 
 function updateProgressBar(){
-    let progressSpent = parseInt((totalExpense/Balance)*100);
-    document.querySelector('.progress-bar').style.background = "";
-    document.querySelector('.progress-bar').style.background = 
-    `radial-gradient(closest-side, black 79%, transparent 80%),conic-gradient(#720e9e ${progressSpent}%, white 0); `
+    let expensePercentage = ((totalExpense / BUDGET ))*100;
+    console.log(expensePercentage+" "+totalExpense+Balance);
+    document.getElementById('progress-bar').style.backgroundImage=`radial-gradient(closest-side, black 79%, transparent 80%),conic-gradient(#720e9e ${expensePercentage}%, white 0)`;
 }
+
+
 
 function emptyInput(){
     title.focus()

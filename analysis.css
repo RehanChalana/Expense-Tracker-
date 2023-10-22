@@ -42,6 +42,7 @@ div{
 .dmy > div{
     opacity: 0.4;
     transition: opacity 250ms ease-in; 
+    /* s */
 }
 .dmy>div:hover{
     opacity: 1;
@@ -56,9 +57,6 @@ div{
     background: #720e9e;
     transition: width 0.3s ease;
 } 
-
-
-
 
 .dmy > div:hover::after{
     /* border-bottom: 4px solid #720e9e ; */
@@ -130,4 +128,58 @@ div{
 #myChart{
     width: 100%;
 }
+
+.highlights{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    gap:20px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    overflow: auto;
+    white-space: nowrap;
+    border-bottom: 1px solid #720e9e;
+}
+
+.highlights > *{
+    /* border: 2px red solid; */
+    max-width: 450px;
+    max-height: 450px;
+}
+
+.doughnut-chart-container{
+    padding: 10px 20px 10px 20px; 
+
+}
+
+.dayAverage{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.highlights::-webkit-scrollbar{
+    display: none;
+}
+
+img{
+    max-width:300px;
+    max-height: 300px;
+    padding: 10px 20px 10px 20px;
+}
+
+#historyHeading{
+    display: flex;
+    color: #720e9e;
+    justify-content: space-between;
+    font-size: x-large;
+    border: white 2px solid;
+    background-color: #040D12;
+    opacity: 0.7;
+    padding: 10px 20px 10px 20px;
+    font-weight: bolder;
+}
+
+
+
 
