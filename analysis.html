@@ -1,142 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Analysis</title>
-    <link rel="stylesheet" href="./analysis.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-   
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./analysis.css">
+  <title>Expense Analysis</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-    <div class="header">
-        TITLE
+    <div class="sideBar"></div>
+    <div class="mainArea">
+      <div class="header1">
+      </div>
+      <div class="header2">
+        <h1 id="analTitle">Expense Analysis</h1>
+        <h1 id="your">Visualize your Wallet </h1>
+      </div>
+      <div class="row1">
+        <canvas id="barGraph" aria-label="chart" height="450" width="750"></canvas>
+        <div>
+          <div id="Balance">
+            <div id="blctext">Your balance</div>
+            <div id="blcAmount">Rs 1500.00</div>
+          </div>
+          <div id="Expense">
+            <div id="expText">Expense</div>
+            <div id="expAmount">Rs 1000.00</div>
+          </div>
+        </div>
+       
+
+      </div>
+      <div class="row2">
+        <div> Something</div>
+        <canvas id="categoryGraph" aria-label="chart" height="350" width="580"></canvas>
+        <div> Something </div>
+      </div>
     </div>
 
-    <div class="analysis">
-
-    <div class="dmy">
-        <div id="dayHead">DAY</div>
-        <div id="weekHead">WEEK</div>
-        <div id="monthHead">MONTH</div>
-    </div>
-
-    <div class="scrollContainer">
-
-    <div class="scrollElements ">
-        <div>10jan</div>
-        <div>22jan</div>
-        <div>21jan</div>
-        <div>20jan</div>
-        <div>19jan</div>
-        <div>YESTERDAY</div>
-        <div id="today">TODAY</div>
-    </div>
-</div>
-
-
-    <div class="mainGraph">
-        <canvas id="myChart" ></canvas>
-    </div>
-
-    <div class="highlights">
-      <div class="doughnut-chart-container">
-        <canvas id="catChart"></canvas>
-      </div>
-      <div id=dayAverage>
-       <img src="./images/average.png"> 
-      </div>
-
-      <div>
-        <img src="./images/speed.png">
-      </div>
-
-      <div>
-        <img src="./images/price.png">
-      </div>
-
-</div>
-<div class="detailHistory">
-  <h1>Transaction History</h1>
-  <div class="historyList">
-   <table class="table table-dark table-striped-columns table-hover table-bordered" style="background-color:#040D12; opacity:0.9;">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Title</th>
-        <th scope="col">Category</th>
-        <th scope="col">Date</th>
-        <th scope="col">Amount</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Maggie</td>
-        <td>snacks</td>
-        <td>2023-11-1</td>
-        <td>Rs 100.00</td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Frooty</td>
-        <td>snacks</td>
-        <td>2023-11-2</td>
-        <td>Rs 20.00</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>Dress</td>
-        <td>Clothing</td>
-        <td>2023-11-3</td>
-        <td>Rs 1000.00</td>
-      </tr>
-    </tbody>
-   </table>
-  </div>
-</div>
-    
+  
 </body>
-
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="./analysis.js"></script>
-<script>
-  const ctx = document.getElementById('myChart');
-
-  new Chart(ctx, {
-    type: 'bar',
-    data: {
-      labels: ['19-01-2002', '20-01-2002', '21-01-2002', '22-01-2002', '23-01-2002', 'Today'],
-      datasets: [{
-        label: 'Expense amount',
-        data: [12, 19, 3, 5, 2, 3],
-        backgroundColor:'#720e9e'
-      }]
-    },
-    options: {
-
-      scales: {
-        y: {
-          beginAtZero: true,
-          grid:{
-            color:'white'
-          },
-          ticks:{
-            color:'white'
-          }
-        },
-
-        x:{
-            grid:{
-                color:'white'
-            },
-            ticks:{
-                color: 'white'
-            }
-        }
-      }
-    }
-  });
-</script>
-
 </html>

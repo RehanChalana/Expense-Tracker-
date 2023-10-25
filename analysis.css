@@ -1,185 +1,90 @@
 *{
-    font-family: 'poppins',sans-serif;
-    color: white; 
-    margin: 0;
     padding: 0;
+    margin: 0;
+    color: white;
+}
+div{
+    /* height: 200px;
+    width:200px; */
+    border: 2px solid red;
 }
 
 body{
-    margin: 0;
+    display: flex;
+
+}
+
+.mainArea{
+    font-family: 'poppins',sans-serif;
+    color: white; 
     background-image: url(./images/black-elegant-background-with-copy-space.jpg);
-    background-repeat: repeat;
+    background-repeat: no-repeat;
     background-size: cover;
-    background-color: #040D12;
-}
-
-/* s */
-/* 
-div{
-    border: 2px red solid;
-} */
-
-.analysis{
     display: flex;
     flex-direction: column;
-    max-width: 1050px;
-    margin: auto;
-}
-
-.analysis > div {
-    align-items: center;
-}
-
-
-.dmy{
-    display: flex;
-    justify-content: space-around;
-    font-size: 50px;
-    font-weight: bold ;
-   
-}
-
-.dmy > div{
-    opacity: 0.4;
-    transition: opacity 250ms ease-in; 
-    /* s */
-}
-.dmy>div:hover{
-    opacity: 1;
-}
-
-
- .dmy > div::after{
-    content: '';
-    display: block;
-    width: 0;    
-    height: 4px;
-    background: #720e9e;
-    transition: width 0.3s ease;
-} 
-
-.dmy > div:hover::after{
-    /* border-bottom: 4px solid #720e9e ; */
-    /* transform: scaleX(1); transform-origin: 100% 50%; */
+    margin-left: 100px;
     width: 100%;
+    height: 100%;
 }
 
-.scrollContainer{
-    margin-top: 10px;
-    margin-top: 1px;
-    padding: 20px 0 20px 0;
-    border-top: #040D12 3px solid;
-    /* background-color: black; */
-    /* sopacity: 0.5; */
-
-}
-
-
-.scrollElements{
-    display: flex;
+.sideBar{
+    margin: 0;
+    padding: 0;
+    width: 100px;
+    background-color: #f1f1f1;
+    position: fixed;
+    height: 100%;
     overflow: auto;
-    white-space: nowrap;
+}
+
+#your {
+    padding: 0 0 0 23px;
+    font-size: 24px;
+    color: #720e9e ;
+    opacity: 0.9;
+    font-weight: 760;
+}
+
+#analTitle{
+    padding: 20px 0 0 20px;
+    font-size: 45px;
+    opacity: 0.9;
+}
+
+.row1{
+   display: flex; 
+   justify-content: space-around;
+}
+
+
+#barGraph{
+    margin-top: 20px;
+}
+
+#Balance {
+    background-color: #3CB043;
+    /* background-color: lightgreen; */
+    margin-top: 28px;
+    padding: 30px 20px 30px 20px;
+    border-radius: 18px;
+    transition: font-size 250ms ease;
+}
+
+#Expense{
+    background-color: #D22B2B ;
+    margin-top: 14px;
+    padding: 30px 20px 30px 20px;
+    border-radius: 18px;
 }
 
 
 
-.scrollElements::-webkit-scrollbar {
-    display: none;
+#blctext,#expText{
+    font-size: larger;
+    font-weight: 550;
 }
 
-.scrollElements > div{
-    padding: 10px 50px 10px 50px;
-    color: white;
-    border: 2px solid #6b6e71;
-    margin-left: 20px;
-    margin-right: 20px;
-    border-radius: 15px;
-    background-color: #282828;
-    font-size: large;
-    transition: all 300ms ease;
+#blcAmount,#expAmount {
+    font-size: 45px;
+    font-weight: 560;
 }
-
-.scrollElements > div:hover{
-    background-color: #720e9e;
-    color: black;
-    cursor: pointer;
-    font-size: x-large;
-    font-weight: bolder;
-    border: 2px solid white ;
-}
-
-#today{
-    background-color: #8333a9;
-    color: black;
-    font-size: x-large;
-    border: 2px solid white ;
-    font-weight: bolder;
-}
-
-
-
-
-.mainGraph{
-    border-top:solid 2px #720e9e ;
-    border-bottom:solid 2px #720e9e ;
-    padding: 40px 10px 40px 10px;   
-}
-
-#myChart{
-    width: 100%;
-}
-
-.highlights{
-    margin-top: 10px;
-    margin-bottom: 10px;
-    display: flex;
-    gap:20px;
-    flex-grow: 0;
-    flex-shrink: 0;
-    overflow: auto;
-    white-space: nowrap;
-    border-bottom: 1px solid #720e9e;
-}
-
-.highlights > *{
-    /* border: 2px red solid; */
-    max-width: 450px;
-    max-height: 450px;
-}
-
-.doughnut-chart-container{
-    padding: 10px 20px 10px 20px; 
-
-}
-
-.dayAverage{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.highlights::-webkit-scrollbar{
-    display: none;
-}
-
-img{
-    max-width:300px;
-    max-height: 300px;
-    padding: 10px 20px 10px 20px;
-}
-
-#historyHeading{
-    display: flex;
-    color: #720e9e;
-    justify-content: space-between;
-    font-size: x-large;
-    border: white 2px solid;
-    background-color: #040D12;
-    opacity: 0.7;
-    padding: 10px 20px 10px 20px;
-    font-weight: bolder;
-}
-
-
-
-

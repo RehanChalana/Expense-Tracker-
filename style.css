@@ -4,13 +4,13 @@
     font-family: 'poppins',sans-serif;
     color: white; 
 }
-/* div{
+/* div,img{
     border: 2px solid red;
 } */
 
  body {
     background-image: url(./images/black-elegant-background-with-copy-space.jpg);
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     background-size: cover;
  }
 
@@ -40,12 +40,22 @@
     justify-content: center;
 }
 
-a>img {
+#navBar{
+    padding: 30px 0 30px 30px;
+    display: flex;
+    gap:20px;
+}
+
+a > img {
     margin-top: auto;
     margin-bottom: auto;
-    margin-right: 100px;
+    margin-right:82px ;
     width: 50px;
     height: 50px;
+}
+
+#graphLink > img{
+    margin: 0;
 }
 
 #dbLeft {
