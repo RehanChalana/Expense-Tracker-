@@ -8,7 +8,9 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-    <div class="sideBar"></div>
+    <div class="sideBar">
+      <!-- <img src="./images/png-clipart-profile-logo-computer-icons-user-user-blue-heroes-thumbnail.png"> -->
+    </div>
     <div class="mainArea">
       <div class="header1">
       </div>
@@ -16,24 +18,40 @@
         <h1 id="analTitle">Expense Analysis</h1>
         <h1 id="your">Visualize your Wallet </h1>
       </div>
+      <div class="header3">
+        <div id="header3Title">spend analysis</div>
+        <div id="dwm">
+        <div id="daily">Daily</div>
+        <div>Weekly</div>
+        <div>Monthly</div>
+        </div>
+        
+      </div>
       <div class="row1">
-        <canvas id="barGraph" aria-label="chart" height="450" width="750"></canvas>
-        <div>
-          <div id="Balance">
+        <canvas id="barGraph" aria-label="chart" height="400" width="800"></canvas>
+        <div id="ele12">
+          <!-- <div id="Balance">
             <div id="blctext">Your balance</div>
             <div id="blcAmount">Rs 1500.00</div>
           </div>
           <div id="Expense">
             <div id="expText">Expense</div>
             <div id="expAmount">Rs 1000.00</div>
-          </div>
+          </div> -->
+          <div class="progress-bar" id="progress-bar">
+            <h1 id="graphPer">00%</h1> 
+            <!-- <progress value="75" min="0" max="100" style="visibility:hidden;height:0;width:0;"></progress> -->
+          </div> 
         </div>
        
 
       </div>
       <div class="row2">
-        <div> Something</div>
-        <canvas id="categoryGraph" aria-label="chart" height="350" width="580"></canvas>
+        <div id="ele21">
+          <div id="barHorTitle">Category spends</div>
+          <canvas id="barHor" aria-label="chart" height="300" width="350"></canvas>
+        </div>
+        <canvas id="categoryGraph"aria-label="chart"></canvas>
         <div> Something </div>
       </div>
     </div>

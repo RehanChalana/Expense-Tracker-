@@ -4,15 +4,29 @@
     font-family: 'poppins',sans-serif;
     color: white; 
 }
-/* div,img{
-    border: 2px solid red;
-} */
+div,img{
+    /* border: 2px solid red; */
+}
 
  body {
     background-image: url(./images/black-elegant-background-with-copy-space.jpg);
     background-repeat: repeat;
     background-size: cover;
  }
+
+/* body{
+    display: flex;
+} */
+
+.sideBar{
+    margin: 0;
+    padding: 0;
+    width: 100px;
+    background-color: #f1f1f1;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+}
 
  #logo:hover {
     cursor: pointer;

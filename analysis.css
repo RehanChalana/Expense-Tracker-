@@ -4,14 +4,11 @@
     color: white;
 }
 div{
-    /* height: 200px;
-    width:200px; */
-    border: 2px solid red;
+ /* border: 3px solid red; */
 }
 
 body{
     display: flex;
-
 }
 
 .mainArea{
@@ -27,6 +24,66 @@ body{
     height: 100%;
 }
 
+.header2{
+    border-bottom: 2px solid #720e9e;
+}
+
+.header3{
+    display: flex;
+    gap: 20px;
+    justify-content: flex-start;
+    padding-top: 10px;
+}
+
+#header3Title{
+    font-size: xx-large;
+    font-weight: bold;
+    /* border-bottom: 1px solid #720e9e; */
+    padding-top: 8px;
+    margin-left: 35px;
+
+}
+
+#dwm{
+    margin-left: 8px;
+    display: flex;
+    gap: 20px;
+}
+
+#dwm > div {
+    font-size: x-large;
+    font-weight: bold;
+    padding: 10px 10px 0 10px;
+    opacity: 0.6;
+    transition: all 250ms ease;
+}
+
+
+#dwm > div:hover{
+    opacity: 1;
+    font-size: xx-large;
+    cursor: pointer;
+}
+#dwm > div::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 3px;
+    background: #720e9e;
+    transition: width .3s;
+}
+
+#dwm > div:hover::after {
+    width: 95%;
+    transition: width .3s;
+}
+
+
+#daily{
+    margin-left: 37px;
+}
+
+
 .sideBar{
     margin: 0;
     padding: 0;
@@ -35,7 +92,9 @@ body{
     position: fixed;
     height: 100%;
     overflow: auto;
+    background-color: #121212;
 }
+
 
 #your {
     padding: 0 0 0 23px;
@@ -53,12 +112,50 @@ body{
 
 .row1{
    display: flex; 
-   justify-content: space-around;
+   justify-content: space-between;
+   padding-left: 29px;
 }
 
 
-#barGraph{
-    margin-top: 20px;
+/* #barGraph{
+    margin-top: 5px;
+} */
+
+#ele12{
+    padding: 50px 80px 40px 80px;
+    /* background-color: black; */
+    opacity: 1;
+    box-shadow: #121212;
+}
+
+#graphPer{
+    font-size: 70px;
+    position: relative;
+    z-index: 5;
+    top:90px;
+    left:70px;
+    transition: all 250ms ease-in;
+}
+
+#graphPer:hover{
+    top:79px;
+    left: 48px;
+    font-weight: bolder;
+    font-size: 90px;
+    color: #9932cc;
+}
+
+.progress-bar {
+    /* padding: 16px 20px 16px 20px; */
+    padding: 16px;
+    width: 270px;
+    height: 270px;
+    border-radius: 70%;
+    /* position: relative;
+    top:-35px; */
+    background-image: 
+      radial-gradient(closest-side, black 79%, transparent 80%),
+      conic-gradient(#720e9e 69%, white 0);      
 }
 
 #Balance {
@@ -88,3 +185,26 @@ body{
     font-size: 45px;
     font-weight: 560;
 }
+
+.row2 {
+    display: flex;
+    padding-top: 20px;
+    padding-left: 20px;
+}
+
+.row2 > * {
+    border: solid 2px white;
+    background-color: #121212;
+}
+
+#ele21{
+    padding: 30px;
+}
+
+#barHorTitle{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+
+
