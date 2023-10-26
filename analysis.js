@@ -69,13 +69,40 @@ var barHor = new Chart(barHorDiv,{
 })
 
 
-const labels3=["Snacks","Educational","Subscriptions","Food","Travel"]
-const data3={
-  labels:labels3,
-  datasets: 
-    {
-      data: [50, 60, 70, 180, 190],
+// const labels3=["Snacks","Educational","Subscriptions","Food","Travel"]
+// const data3={
+//   labels:labels3,
+//   datasets: 
+//     {
+//       data: [50, 60, 70, 180, 190],
+//     }
+// }
+
+
+const data3 = {
+  labels: [
+    'Red',
+    'Blue',
+    'Yellow'
+  ],
+  datasets: [{
+    label: 'My First Dataset',
+    data: [300, 50, 100],
+    backgroundColor: [
+      'rgb(255, 99, 132)',
+      'rgb(54, 162, 235)',
+      'rgb(255, 205, 86)'
+    ],
+    hoverOffset: 4,
+    options:{
+      responsive:false
     }
-}
+  }]
+};
 
 let categoryGraphDiv = document.getElementById("categoryGraph").getContext("2d");
+
+const categoryGraph = new Chart(categoryGraphDiv,{
+  type: 'doughnut',
+  data: data3
+})

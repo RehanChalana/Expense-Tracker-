@@ -190,6 +190,7 @@ body{
     display: flex;
     padding-top: 20px;
     padding-left: 20px;
+    gap: 20px;
 }
 
 .row2 > * {
@@ -198,12 +199,16 @@ body{
 }
 
 #ele21{
-    padding: 30px;
+    padding: 15px 30px 10px 30px;
 }
 
 #barHorTitle{
     font-size: 30px;
     font-weight: bold;
+}
+
+#ele22{
+    padding: 15px 30px 10px 30px;
 }
 
 
