@@ -111,7 +111,7 @@ a > img {
 .graph {
     padding: 10px;
 }
-.progress-bar {
+.progGraph {
     /* padding: 16px 20px 16px 20px; */
     padding: 16px;
     width: 220px;
@@ -124,7 +124,7 @@ a > img {
       conic-gradient(#720e9e 0%, white 0);      
   }
 
-#graphPer{
+#progGraphText{
     position: relative;
     z-index: 5;
     top:76px;
@@ -133,7 +133,7 @@ a > img {
     transition: all 250ms ease;
 } 
 
-#graphPer:hover{
+#progGraphText:hover{
     top:70px;
     left: 48px;
     font-weight: bolder;
