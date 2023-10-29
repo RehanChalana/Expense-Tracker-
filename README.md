@@ -21,8 +21,8 @@ Bonus Features:br
 📦 Add local storage support for data persistence.br
 
 What's New:br
-💰 Continuously Balance showing. <br>
-📋 Add Transaction Budget. <br>
-📜 A big space listing all the transactions (can be scrolled).br
+💰 Continuously Balance showing. br
+📋 Add Transaction Budget. br
+📜 A big space listing all the transactions (can be scrolled). br
 💵 Add a money button. br
 Project by: 🚀 Rehan Chalana
