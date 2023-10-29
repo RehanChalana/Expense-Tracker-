@@ -80,13 +80,13 @@ function updateProgressBar(){
     let expensePercentage = ((totalExpense / BUDGET ))*100;
     expensePercentage = expensePercentage.toFixed(0);
     if(expensePercentage<10){
-        document.querySelector("#graphPer").innerText="0"+expensePercentage+"%";
+        document.querySelector("#progGraphText").innerText="0"+expensePercentage+"%";
     } else{
-        document.querySelector("#graphPer").innerText=expensePercentage+"%";
+        document.querySelector("#progGraphText").innerText=expensePercentage+"%";
     }
-    document.querySelector("#graphPer").innerText=expensePercentage+"%";
+    document.querySelector("#progGraphText").innerText=expensePercentage+"%";
     console.log(expensePercentage+" "+totalExpense+Balance);
-    document.getElementById('progress-bar').style.backgroundImage=`radial-gradient(closest-side, black 79%, transparent 80%),conic-gradient(#720e9e ${parseFloat(expensePercentage)}%, white 0)`;
+    document.getElementById('progGraph').style.backgroundImage=`radial-gradient(closest-side, black 79%, transparent 80%),conic-gradient(#720e9e ${parseFloat(expensePercentage)}%, white 0)`;
 }
 
 

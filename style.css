@@ -25,7 +25,56 @@ div,img{
     background-color: #f1f1f1;
     position: fixed;
     height: 100%;
-    overflow: auto;
+    background-color: #121212;
+}
+
+.sideBar{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#topSideBar >a >img{
+    margin-top: 15px;
+    margin-left: 15px;
+    height: 60px;
+    width: 65px;
+    opacity: 0.6;
+    transition: opacity 250ms ease;
+}
+
+#middleSideBar > a > img{
+    margin-top: 15px;
+    margin-left: 15px;
+    height: 60px;
+    width: 60px;
+    opacity: 0.6;
+    transition: opacity 250ms ease;
+}
+
+#endSideBar > a > img{
+    margin-top: 15px;
+    margin-left: 15px;
+    height: 60px;
+    width: 60px;
+    margin-bottom: 15px;
+    opacity: 0.6;
+    transition: opacity 250ms ease;
+}
+
+#topSideBar >a >img:hover{
+    opacity: 1;
+    /* border-bottom: 4px solid #720e9e; */
+}
+
+#middleSideBar >a >img:hover{
+    opacity: 1;
+    /* border-bottom: 4px solid #720e9e; */
+}
+
+#endSideBar >a >img:hover{
+    opacity: 1;
+    /* border-bottom: 4px solid #720e9e; */
 }
 
  #logo:hover {
@@ -60,12 +109,13 @@ div,img{
     gap:20px;
 }
 
-a > img {
+#topDashboardIcon {
     margin-top: auto;
     margin-bottom: auto;
     margin-right:82px ;
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
+    opacity: 0.7;
 }
 
 #graphLink > img{

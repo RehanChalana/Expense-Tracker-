@@ -3,13 +3,77 @@
     margin: 0;
     color: white;
 }
-div{
- /* border: 3px solid red; */
+div,img{
+/* border: 2px red solid; */
 }
 
 body{
     display: flex;
 }
+
+.sideBar{
+    margin: 0;
+    padding: 0;
+    width: 100px;
+    background-color: #f1f1f1;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+    background-color: #121212;
+}
+
+.sideBar{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#topSideBar >a >img{
+    margin-top: 15px;
+    margin-left: 15px;
+    height: 60px;
+    width: 65px;
+    opacity: 0.6;
+    transition: opacity 250ms ease;
+}
+
+#middleSideBar > a > img{
+    margin-top: 15px;
+    margin-left: 15px;
+    height: 60px;
+    width: 60px;
+    opacity: 0.6;
+    transition: opacity 250ms ease;
+}
+
+#endSideBar > a > img{
+    margin-top: 15px;
+    margin-left: 15px;
+    margin-bottom: 15px;
+    opacity: 0.6;
+    transition: opacity 250ms ease;
+}
+
+#topSideBar >a >img:hover{
+    opacity: 1;
+    /* border-bottom: 4px solid #720e9e; */
+}
+
+#middleSideBar >a >img:hover{
+    opacity: 1;
+    /* border-bottom: 4px solid #720e9e; */
+}
+
+#endSideBar >a >img:hover{
+    opacity: 1;
+    /* border-bottom: 4px solid #720e9e; */
+}
+
+
+/* #walletIcon{
+    height: 65px;
+    width: 65px;
+} */
 
 .mainArea{
     font-family: 'poppins',sans-serif;
@@ -85,16 +149,7 @@ body{
 }
 
 
-.sideBar{
-    margin: 0;
-    padding: 0;
-    width: 100px;
-    background-color: #f1f1f1;
-    position: fixed;
-    height: 100%;
-    overflow: auto;
-    background-color: #121212;
-}
+
 
 
 #your {
@@ -259,6 +314,23 @@ body{
 
 #li3{
     color: skyblue;
+}
+
+.history{
+    margin-top: 40px;
+}
+
+#historyTitle{
+    font-size: 40px;
+    font-weight: bold;
+    /* border-bottom: 1px solid #720e9e; */
+    padding-top: 8px;
+    padding-left: 35px;
+    border-bottom:2px solid #720e9e ;
+}
+
+#historyTable{
+    padding-top:30px ;
 }
 
 
