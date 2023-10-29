@@ -11,10 +11,10 @@ Objective: 💡 Develop an app that helps users track their expenses and manage 
 
 Approach:
 
-🖌️ Design the HTML layout with input fields for expenses and budget categories.
-✨ Use CSS to style the app and make it visually appealing.
-🧮 Write JavaScript to handle expense calculations and display summaries.
-Bonus Features:
+🖌️ Design the HTML layout with input fields for expenses and budget categories./n
+✨ Use CSS to style the app and make it visually appealing./n
+🧮 Write JavaScript to handle expense calculations and display summaries./n
+Bonus Features:/n
 
 📊 Include data visualization with charts to show spending patterns.
 📆 Implement a budget planner feature to set monthly spending limits.
