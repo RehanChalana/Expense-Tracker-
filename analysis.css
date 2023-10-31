@@ -191,15 +191,15 @@ body{
     font-size: 70px;
     position: relative;
     z-index: 5;
-    top:90px;
+    top:110px;
     font-weight: bold;
-    left:70px;
+    left:84px;
     transition: all 250ms ease-in;
 }
 
 #progGraphText:hover{
-    top:79px;
-    left: 48px;
+    top:100px;
+    left: 68px;
     font-weight: bolder;
     font-size: 90px;
     color: #9932cc;
@@ -207,7 +207,7 @@ body{
 
 .progGraph {
     /* padding: 16px 20px 16px 20px; */
-    padding: 16px;
+    /* padding: 16px; */
     width: 300px;
     height: 300px;
     border-radius: 70%;
