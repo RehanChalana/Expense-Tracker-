@@ -14,7 +14,7 @@ body{
 .sideBar{
     margin: 0;
     padding: 0;
-    width: 100px;
+    width: 70px;
     background-color: #f1f1f1;
     position: fixed;
     height: 100%;
@@ -29,28 +29,30 @@ body{
 }
 
 #topSideBar >a >img{
-    margin-top: 15px;
-    margin-left: 15px;
-    height: 60px;
-    width: 65px;
+    margin-top: 10px;
+    margin-left: 10px;
+    height: 47px;
+    width: 50px;
     opacity: 0.6;
     transition: opacity 250ms ease;
 }
 
 #middleSideBar > a > img{
-    margin-top: 15px;
-    margin-left: 15px;
-    height: 60px;
-    width: 60px;
+    margin-top: 10px;
+    margin-left: 10px;
+    height: 45px;
+    width: 45px;
     opacity: 0.6;
     transition: opacity 250ms ease;
 }
 
 #endSideBar > a > img{
-    margin-top: 15px;
-    margin-left: 15px;
+    margin-top: 10px;
+    margin-left: 10px;
     margin-bottom: 15px;
     opacity: 0.6;
+    height: 45px;
+    width: 45px;
     transition: opacity 250ms ease;
 }
 
@@ -83,7 +85,7 @@ body{
     background-size: cover;
     display: flex;
     flex-direction: column;
-    margin-left: 100px;
+    margin-left: 70px;
     width: 100%;
     height: 100%;
     /* align-items: flex-start; */
@@ -232,8 +234,6 @@ body{
     border-radius: 18px;
 }
 
-
-
 #blctext,#expText{
     font-size: larger;
     font-weight: 550;
@@ -330,8 +330,31 @@ body{
 }
 
 #historyTable{
-    padding-top:30px ;
+    margin-top: 10px;
+    margin-right: 5px;
+    margin-left: 5px;
+    padding:30px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #121212;
+    border: #f1f1f1 2px solid;
 }
+
+#historyTable > div{
+    background-color: #121212;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.historycolTitle{
+    font-size: 33px;
+    color: #9932cc;
+}
+
+.historycolElement{
+    padding-left:5px ;
+}
+
 
 
 
