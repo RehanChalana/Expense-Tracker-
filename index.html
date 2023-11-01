@@ -9,16 +9,18 @@
 <body>
     <div class="detailBox">
         <div class="inputBox">
-            <h2>Wallet Details</h2>
+            <h2>Wallet Login</h2>
             <label>Wallet Name</label>
-            <input type="text" placeholder="User's Wallet">
+            <input id="walletNameIn" type="text" placeholder="User's Wallet">
+            <label>Password</label>
+            <input id="passwordIn" type="password" placeholder="enter your password">
             <label>Set/Change Budget</label>
             <input id="budgetAmount" class="setBudget" type="number" placeholder="Rs 0000.00">
-            <label>Password</label>
-            <input type="password" placeholder="enter your password">
-            <a href="./DashBoard.html"><button onclick=changeBalance() id=addBudget>Submit</button></a>
+            <a  href="#"><button class="submitButton">Submit</button></a>
         </div>
     </div>
 </body>
-<!-- <script src="script.js"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+<script type="module" src="login.js"></script>
+
 </html>
