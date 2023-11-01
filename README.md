@@ -1,5 +1,5 @@
 Click the link to Try!
-https://rehanchalana.github.io/FEE-Project/
+https://rehanchalana.github.io/Expense-Tracker-/
 
 
 🌟 Expense Tracker Web App 🌟
