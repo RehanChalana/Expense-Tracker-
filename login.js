@@ -20,13 +20,17 @@ async function checkLogin(){
         const getPassDetails = await database.from('users').select('password').eq("walletname",wallet_name);
         if(password_in.localeCompare(getPassDetails.data[0]["password"])==0){
             alert("LOGIN SUCCESS");
+            sessionStorage.setItem("user",wallet_name);
+            window.location.href="DashBoard.html";   
         } else{
             alert("wrong password");
         }
     } else{
         alert("User not found please signup first")
     }
+    redirect();
 }
+
 
 
 

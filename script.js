@@ -1,3 +1,6 @@
+import {supabase_url,supabase_key} from './keys.js';
+const database = supabase.createClient(supabase_url,supabase_key);  
+
 // initializing variables 
 let title = document.querySelector('.expenseTitle');
 let category = document.querySelector('.category');
@@ -8,15 +11,21 @@ let dummy = document.querySelector('.dummy');
 var totalExpense = 0;
 let entryCount = 0;
 
+const username = sessionStorage.getItem("user");
+alert("welcomeBack " + username);
+const balanceImport = await database.from("users").select("Budget").eq("walletname",username);
+console.log(balanceImport);
 
 
 // prompting the budget
-var Balance = parseInt(prompt("SET BUDGET HERE!"));
-const BUDGET = Balance;
-while(Balance<=0){
-    alert("Please Enter a Positive Balance");
-    Balance = parseInt(prompt("SET BUDGET HERE!"));
-}
+// var Balance = parseInt(prompt("SET BUDGET HERE!"));
+// const BUDGET = Balance;
+// while(Balance<=0){
+//     alert("Please Enter a Positive Balance");
+//     Balance = parseInt(prompt("SET BUDGET HERE!"));
+// }
+
+var Balance = balanceImport.data[0]["Budget"]; 
 document.querySelector('.blcAmount').innerText = Balance;
 document.querySelector('#budget').innerText = Balance;
 
