@@ -12,27 +12,23 @@ var totalExpense = 0;
 let entryCount = 0;
 
 const username = sessionStorage.getItem("user");
-alert("welcomeBack " + username);
 const balanceImport = await database.from("users").select("Budget").eq("walletname",username);
-console.log(balanceImport);
-
-
-// prompting the budget
-// var Balance = parseInt(prompt("SET BUDGET HERE!"));
-// const BUDGET = Balance;
-// while(Balance<=0){
-//     alert("Please Enter a Positive Balance");
-//     Balance = parseInt(prompt("SET BUDGET HERE!"));
-// }
-
 var Balance = balanceImport.data[0]["Budget"]; 
+const BUDGET = Balance;
+
+document.querySelector("#hello").innerText="Hello, Welcome back "+username;
+
+
+
+
 document.querySelector('.blcAmount').innerText = Balance;
 document.querySelector('#budget').innerText = Balance;
+document.querySelector("#addExpense").addEventListener("click",findInput);
+document.querySelector("#addExpense").addEventListener("click",changeBalance);
+document.querySelector("#addExpense").addEventListener("click",addExpense);
+document.querySelector("#addExpense").addEventListener("click",history);
+document.querySelector("#addExpense").addEventListener("click",updateProgressBar);
 
-// expenseHTML = JSON.parse(localStorage.getItem('history'))|| [];
-// history();
-
-// JSON.parse(localStorage.getItem('finalExpense'))||
 
 function findInput() {
     const inputElement = document.querySelector('.expenseInput').value;
