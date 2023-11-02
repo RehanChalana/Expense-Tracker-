@@ -1,3 +1,4 @@
+
 import {supabase_url,supabase_key} from './keys.js';
 const database = supabase.createClient(supabase_url,supabase_key);  
 
@@ -8,26 +9,31 @@ let expense = document.querySelector('.expenseInput');
 let date = document.querySelector('.date');
 let hist = document.querySelector('.userEntries');
 let dummy = document.querySelector('.dummy');
-var totalExpense = 0;
 let entryCount = 0;
 
 const username = sessionStorage.getItem("user");
-const balanceImport = await database.from("users").select("Budget").eq("walletname",username);
-var Balance = balanceImport.data[0]["Budget"]; 
-const BUDGET = Balance;
+const budgetImport = await database.from("users").select("Budget").eq("walletname",username);
+const balanceImport = await database.from("users").select("userBalance").eq("walletname",username);
+var Balance = balanceImport.data[0]["userBalance"]; 
+const BUDGET = budgetImport.data[0]["Budget"];
+let totalExpense = BUDGET - Balance;
 
 document.querySelector("#hello").innerText="Hello, Welcome back "+username;
+updateProgressBar();
 
 
 
 
 document.querySelector('.blcAmount').innerText = Balance;
-document.querySelector('#budget').innerText = Balance;
+document.querySelector('#budget').innerText = BUDGET;
 document.querySelector("#addExpense").addEventListener("click",findInput);
 document.querySelector("#addExpense").addEventListener("click",changeBalance);
 document.querySelector("#addExpense").addEventListener("click",addExpense);
 document.querySelector("#addExpense").addEventListener("click",history);
 document.querySelector("#addExpense").addEventListener("click",updateProgressBar);
+
+
+// 
 
 
 function findInput() {
@@ -39,7 +45,9 @@ function findInput() {
 async function changeBalance() {
     Balance = eval(Balance + '-' + findInput());
     document.querySelector('.blcAmount').innerText = Balance;
-    const balanceImport = await database.from("users").update({Balance:Balance});
+    // const balanceImport = await database.from("users").update({"Balance":Balance}).eq("walletname",username);
+    const updateBalance = await database.from("users").update({userBalance:Balance}).eq("walletname",username);
+    console.log(Balance);
 }
 
 function addExpense() {
