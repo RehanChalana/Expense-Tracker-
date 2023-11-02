@@ -17,7 +17,7 @@ const balanceImport = await database.from("users").select("userBalance").eq("wal
 var Balance = balanceImport.data[0]["userBalance"]; 
 const BUDGET = budgetImport.data[0]["Budget"];
 let totalExpense = BUDGET - Balance;
-
+document.querySelector('.expenseValue').innerText = totalExpense;
 document.querySelector("#hello").innerText="Hello, Welcome back "+username;
 updateProgressBar();
 
@@ -29,6 +29,7 @@ document.querySelector('#budget').innerText = BUDGET;
 document.querySelector("#addExpense").addEventListener("click",findInput);
 document.querySelector("#addExpense").addEventListener("click",changeBalance);
 document.querySelector("#addExpense").addEventListener("click",addExpense);
+// document.querySelector("#addExpense").addEventListener("click",exportHistory);
 document.querySelector("#addExpense").addEventListener("click",history);
 document.querySelector("#addExpense").addEventListener("click",updateProgressBar);
 
@@ -56,6 +57,17 @@ function addExpense() {
     totalExpense = eval(newcal);
     document.querySelector('.expenseValue').innerText = totalExpense;
 };
+
+// async function exportHistory(){
+//     const historyExport = await database.from("ExpenseHistory").insert([
+//         {user_id:4},
+//         {Amount:expense.value},
+//         {Title:title.value},
+//         {Category:category},
+//         {Date:date.value},
+//         {transaction_id:1}
+//     ])
+// }
 
 
 function history() {
@@ -90,11 +102,15 @@ function history() {
     emptyInput();
 }
 
+
+
 function updateProgressBar(){
     let expensePercentage = ((totalExpense / BUDGET ))*100;
     expensePercentage = expensePercentage.toFixed(0);
-    if(expensePercentage<10){
-        document.querySelector("#progGraphText").innerText="0"+expensePercentage+"%";
+    if(expensePercentage < 10){
+        let perstring = String(expensePercentage);
+        console.log("yess");
+        document.querySelector("#progGraphText").innerText="0"+perstring+"%";
     } else{
         document.querySelector("#progGraphText").innerText=expensePercentage+"%";
     }
