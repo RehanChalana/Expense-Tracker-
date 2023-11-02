@@ -36,9 +36,10 @@ function findInput() {
     return inputElement;
 };
 
-function changeBalance() {
+async function changeBalance() {
     Balance = eval(Balance + '-' + findInput());
     document.querySelector('.blcAmount').innerText = Balance;
+    const balanceImport = await database.from("users").update({Balance:Balance});
 }
 
 function addExpense() {
