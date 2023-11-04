@@ -14,6 +14,8 @@ let entryCount = 0;
 const username = sessionStorage.getItem("user");
 const budgetImport = await database.from("users").select("Budget").eq("walletname",username);
 const balanceImport = await database.from("users").select("userBalance").eq("walletname",username);
+const user_idImport = await database.from("users").select("user_id").eq("walletname",username);
+const user_idVal = user_idImport.data[0]["user_id"];
 var Balance = balanceImport.data[0]["userBalance"]; 
 const BUDGET = budgetImport.data[0]["Budget"];
 let totalExpense = BUDGET - Balance;
@@ -29,7 +31,7 @@ document.querySelector('#budget').innerText = BUDGET;
 document.querySelector("#addExpense").addEventListener("click",findInput);
 document.querySelector("#addExpense").addEventListener("click",changeBalance);
 document.querySelector("#addExpense").addEventListener("click",addExpense);
-// document.querySelector("#addExpense").addEventListener("click",exportHistory);
+document.querySelector("#addExpense").addEventListener("click",exportHistory);
 document.querySelector("#addExpense").addEventListener("click",history);
 document.querySelector("#addExpense").addEventListener("click",updateProgressBar);
 
@@ -46,9 +48,8 @@ function findInput() {
 async function changeBalance() {
     Balance = eval(Balance + '-' + findInput());
     document.querySelector('.blcAmount').innerText = Balance;
-    // const balanceImport = await database.from("users").update({"Balance":Balance}).eq("walletname",username);
+    const balanceImport = await database.from("users").update({"Balance":Balance}).eq("walletname",username);
     const updateBalance = await database.from("users").update({userBalance:Balance}).eq("walletname",username);
-    console.log(Balance);
 }
 
 function addExpense() {
@@ -58,16 +59,15 @@ function addExpense() {
     document.querySelector('.expenseValue').innerText = totalExpense;
 };
 
-// async function exportHistory(){
-//     const historyExport = await database.from("ExpenseHistory").insert([
-//         {user_id:4},
-//         {Amount:expense.value},
-//         {Title:title.value},
-//         {Category:category},
-//         {Date:date.value},
-//         {transaction_id:1}
-//     ])
-// }
+async function exportHistory(){
+    try{
+         const historyExport = await database.from("ExpenseHistory").insert([
+        {"user_id":user_idVal,"Amount":expense.value,"Title":title.value,"category":category.value,"Date":date.value}])
+        console.log("added successfully",historyExport)
+    } catch (error){
+        console.error('Error adding history entry:', error);
+    }   
+}
 
 
 function history() {

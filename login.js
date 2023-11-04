@@ -5,7 +5,25 @@ const getUserDetails =  await database.from('users').select('walletname');
 let wallet_name;
 let password_in;
 let isUser = false;
-document.querySelector(".submitButton").addEventListener("click", checkLogin);
+let balance_in;
+ document.querySelector(".submitButton").addEventListener("click", checkLogin);
+// document.querySelector(".submitButton").addEventListener("click", addNewUser);
+
+// async function addNewUser(){
+//     try {
+//         wallet_name = document.querySelector("#walletNameIn").value;
+//         password_in = document.querySelector("#passwordIn").value;
+//         balance_in = document.querySelector("#budgetAmount").value;
+//         const addUserDetails = await database.from('users').insert([
+//           {"walletname": wallet_name,"Budget":balance_in,"password":password_in,"userBalance":balance_in}
+//         ]);
+//         console.log(wallet_name);
+    
+//         console.log('User details added successfully:', addUserDetails);
+//       } catch (error) {
+//         console.error('Error adding user details:', error);
+//       }
+// }
 
 
 async function checkLogin(){
