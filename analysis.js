@@ -1,3 +1,29 @@
+
+import {supabase_url,supabase_key} from './keys.js';
+const database = supabase.createClient(supabase_url,supabase_key);  
+const username = sessionStorage.getItem("user");
+
+// updating the progress graph
+const budgetImport = await database.from("users").select("Budget").eq("walletname",username);
+const balanceImport = await database.from("users").select("userBalance").eq("walletname",username);
+var Balance = balanceImport.data[0]["userBalance"]; 
+const BUDGET = budgetImport.data[0]["Budget"];
+let totalExpense = BUDGET - Balance;
+let expensePercentage = ((totalExpense / BUDGET ))*100;
+expensePercentage = expensePercentage.toFixed(0);
+const progGraph = document.querySelector("#progGraph");
+if(expensePercentage < 10){
+  let perstring = String(expensePercentage);
+  document.querySelector("#progGraphText").innerText="0"+perstring+"%";
+} else{
+  document.querySelector("#progGraphText").innerText=expensePercentage+"%";
+}
+document.getElementById('progGraph').style.backgroundImage=`radial-gradient(closest-side, black 79%, transparent 80%),conic-gradient(#720e9e ${parseFloat(expensePercentage)}%, white 0)`;
+
+
+
+
+
 const labels = ["Jan","Feb","june","july","Aug","May","Nov"]
 const data = {
   labels: labels,

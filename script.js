@@ -114,8 +114,8 @@ function updateProgressBar(){
     } else{
         document.querySelector("#progGraphText").innerText=expensePercentage+"%";
     }
-    document.querySelector("#progGraphText").innerText=expensePercentage+"%";
-    console.log(expensePercentage+" "+totalExpense+Balance);
+    // document.querySelector("#progGraphText").innerText=expensePercentage+"%";
+    // console.log(expensePercentage+" "+totalExpense+Balance);
     document.getElementById('progGraph').style.backgroundImage=`radial-gradient(closest-side, black 79%, transparent 80%),conic-gradient(#720e9e ${parseFloat(expensePercentage)}%, white 0)`;
 }
 
