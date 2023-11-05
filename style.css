@@ -14,9 +14,6 @@ div,img{
     background-size: cover;
  }
 
-/* body{
-    display: flex;
-} */
 
 .sideBar{
     margin: 0;
@@ -131,11 +128,6 @@ div,img{
     padding : 25px 10px 25px 10px ;
 }
 
-/* #dbheading > p {
-    color: #710193 ;
-    font-size: large;
-    font-weight: 700;
-} */
 
 #hello {
     margin-left: 3px ;
@@ -179,14 +171,14 @@ div,img{
     position: relative;
     z-index: 5;
     top:76px;
-    left: 56px;
+    left: 52px;
     font-size: 60px;
     transition: all 250ms ease;
 } 
 
 #progGraphText:hover{
     top:70px;
-    left: 48px;
+    left: 45px;
     font-weight: bolder;
     font-size: 70px;
     color: #9932cc;

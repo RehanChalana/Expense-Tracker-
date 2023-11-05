@@ -39,7 +39,11 @@ async function checkLogin(){
         if(password_in.localeCompare(getPassDetails.data[0]["password"])==0){
             alert("LOGIN SUCCESS");
             sessionStorage.setItem("user",wallet_name);
-            window.location.href="DashBoard.html";   
+            let user_idImport = await database.from('users').select("user_id").eq("walletname",wallet_name);
+            let user_id = user_idImport.data[0]['user_id'];
+            sessionStorage.setItem("user_id",user_id);
+            console.log(user_id);
+             window.location.href="DashBoard.html";   
         } else{
             alert("wrong password");
         }

@@ -103,7 +103,6 @@ function history() {
 }
 
 
-
 function updateProgressBar(){
     let expensePercentage = ((totalExpense / BUDGET ))*100;
     expensePercentage = expensePercentage.toFixed(0);

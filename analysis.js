@@ -23,13 +23,36 @@ document.getElementById('progGraph').style.backgroundImage=`radial-gradient(clos
 
 
 
+// ploting the main graph! day wise
+let user_id = sessionStorage.getItem("user_id");
+let historyData = await database.from("ExpenseHistory").select("Amount,Date").eq("user_id",user_id);
+let dayarray = [];
+let dayAmountArray = [];
 
-const labels = ["Jan","Feb","june","july","Aug","May","Nov"]
+for(let i = 0; i < historyData.data.length;i++){
+  if(!dayarray.includes(historyData.data[i]["Date"])){
+    let sum = 0;
+    let tempDate = historyData.data[i]["Date"];
+    for(let j=0;j<historyData.data.length;j++){
+      if(historyData.data[j]["Date"]==tempDate){
+        sum+=historyData.data[j]["Amount"];
+      }
+    }
+    dayarray.push(historyData.data[i]["Date"]);
+    dayAmountArray.push(sum);
+  }
+}
+console.log(dayarray);
+console.log(dayAmountArray);
+
+console.log(historyData);
+
+const labels = dayarray;
 const data = {
   labels: labels,
   datasets: [{
     label: 'My First Dataset',
-    data: [65, 59, 80, 81, 56, 55, 40],
+    data: dayAmountArray,
     backgroundColor: '#720e9e',
     borderWidth: 1
   }]
