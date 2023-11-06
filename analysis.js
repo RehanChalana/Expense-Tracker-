@@ -33,7 +33,7 @@ for(let i = 0; i < historyData.data.length;i++){
   if(!dayarray.includes(historyData.data[i]["Date"])){
     let sum = 0;
     let tempDate = historyData.data[i]["Date"];
-    for(let j=0;j<historyData.data.length;j++){
+    for(let j=i;j<historyData.data.length;j++){
       if(historyData.data[j]["Date"]==tempDate){
         sum+=historyData.data[j]["Amount"];
       }
@@ -44,14 +44,13 @@ for(let i = 0; i < historyData.data.length;i++){
 }
 console.log(dayarray);
 console.log(dayAmountArray);
-
 console.log(historyData);
 
 const labels = dayarray;
 const data = {
   labels: labels,
   datasets: [{
-    label: 'My First Dataset',
+    label: 'Amount spent on date',
     data: dayAmountArray,
     backgroundColor: '#720e9e',
     borderWidth: 1
@@ -82,14 +81,40 @@ var barGraph = new Chart(barGraphdiv, {
   },
 });
 
+// reteriving category wise data 
 
-const labels2 = ["Snacks","Clothing","Educational"]
+let categoryArray = [];
+let categoryValueArray = [];
+let categoryCountArray = [];
+for(let i=0;i<historyData.data.length;i++){
+  let tempCat = historyData.data[i]['category'];
+  if(!categoryArray.includes(tempCat)){
+    categoryArray.push(tempCat);
+    let sum = 0;
+    let count = 0;
+    for(let j=i;j<historyData.data.length;j++){
+      if(historyData.data[j]['category']==tempCat){
+        sum+=historyData.data[j]['Amount'];
+        count++;
+      }
+    }
+    categoryValueArray.push(sum);
+    categoryCountArray.push(count); 
+  }
+ 
+}
+
+
+// ploting the horizontal bargraph!
+
+
+
+const labels2 = categoryArray;
 const data2 = {
   labels: labels2,
   datasets: [{
     label: 'Category Analysis',
-    data: [4,5,2],
-    backgroundColor: ['blue','green','red'],
+    data: categoryCountArray,
     borderWidth: 1
   }]
 };
@@ -119,22 +144,22 @@ var barHor = new Chart(barHorDiv,{
 
 
 // trying to plot the category chart 
-let categoryArray = [];
-let categoryValueArray = [];
-for(let i=0;i<historyData.data.length;i++){
-  let tempCat = historyData.data[i]['category'];
-  if(!categoryArray.includes(tempCat)){
-    categoryArray.push(tempCat);
-    let sum = 0;
-    for(let j=i;j<historyData.data.length;j++){
-      if(historyData.data[j]['category']==tempCat){
-        sum+=historyData.data[j]['Amount'];
-      }
-    }
-    categoryValueArray.push(sum); 
-  }
+// let categoryArray = [];
+// let categoryValueArray = [];
+// for(let i=0;i<historyData.data.length;i++){
+//   let tempCat = historyData.data[i]['category'];
+//   if(!categoryArray.includes(tempCat)){
+//     categoryArray.push(tempCat);
+//     let sum = 0;
+//     for(let j=i;j<historyData.data.length;j++){
+//       if(historyData.data[j]['category']==tempCat){
+//         sum+=historyData.data[j]['Amount'];
+//       }
+//     }
+//     categoryValueArray.push(sum); 
+//   }
  
-}
+// }
 console.log(categoryArray);
 console.log(categoryValueArray);
 
