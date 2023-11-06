@@ -113,7 +113,8 @@ const labels2 = categoryArray;
 const data2 = {
   labels: labels2,
   datasets: [{
-    label: 'Category Analysis',
+    label: 'Category Occurance',
+    backgroundColor :['red','blue','green'],
     data: categoryCountArray,
     borderWidth: 1
   }]
@@ -142,24 +143,6 @@ var barHor = new Chart(barHorDiv,{
 }
 })
 
-
-// trying to plot the category chart 
-// let categoryArray = [];
-// let categoryValueArray = [];
-// for(let i=0;i<historyData.data.length;i++){
-//   let tempCat = historyData.data[i]['category'];
-//   if(!categoryArray.includes(tempCat)){
-//     categoryArray.push(tempCat);
-//     let sum = 0;
-//     for(let j=i;j<historyData.data.length;j++){
-//       if(historyData.data[j]['category']==tempCat){
-//         sum+=historyData.data[j]['Amount'];
-//       }
-//     }
-//     categoryValueArray.push(sum); 
-//   }
- 
-// }
 console.log(categoryArray);
 console.log(categoryValueArray);
 
