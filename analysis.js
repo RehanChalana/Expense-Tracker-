@@ -25,7 +25,7 @@ document.getElementById('progGraph').style.backgroundImage=`radial-gradient(clos
 
 // ploting the main graph! day wise
 let user_id = sessionStorage.getItem("user_id");
-let historyData = await database.from("ExpenseHistory").select("Amount,Date").eq("user_id",user_id);
+let historyData = await database.from("ExpenseHistory").select("Amount,Date,category").eq("user_id",user_id);
 let dayarray = [];
 let dayAmountArray = [];
 
@@ -118,15 +118,24 @@ var barHor = new Chart(barHorDiv,{
 })
 
 
-// const labels3=["Snacks","Educational","Subscriptions","Food","Travel"]
-// const data3={
-//   labels:labels3,
-//   datasets: 
-//     {
-//       data: [50, 60, 70, 180, 190],
-//     }
-// }
-
+// trying to plot the category chart 
+let categoryArray = [];
+let categoryValueArray = [];
+for(let i=0;i<historyData.data.length;i++){
+  let count = 0;
+  let tempCat = historyData.data[i]['category'];
+  if(!categoryArray.includes(tempCat)){
+    categoryArray.push(tempCat);
+    for(let j=i;j<historyData.data.length;j++){
+      if(historyData.data[j]['category']==tempCat){
+        count++;
+      }
+    }
+  }
+  categoryValueArray.push(count); 
+}
+console.log(categoryArray);
+console.log(categoryValueArray);
 
 const data3 = {
   labels: [
