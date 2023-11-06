@@ -122,35 +122,27 @@ var barHor = new Chart(barHorDiv,{
 let categoryArray = [];
 let categoryValueArray = [];
 for(let i=0;i<historyData.data.length;i++){
-  let count = 0;
   let tempCat = historyData.data[i]['category'];
   if(!categoryArray.includes(tempCat)){
     categoryArray.push(tempCat);
+    let sum = 0;
     for(let j=i;j<historyData.data.length;j++){
       if(historyData.data[j]['category']==tempCat){
-        count++;
+        sum+=historyData.data[j]['Amount'];
       }
     }
+    categoryValueArray.push(sum); 
   }
-  categoryValueArray.push(count); 
+ 
 }
 console.log(categoryArray);
 console.log(categoryValueArray);
 
 const data3 = {
-  labels: [
-    'Red',
-    'Blue',
-    'Yellow'
-  ],
+  labels: categoryArray,
   datasets: [{
-    label: 'My First Dataset',
-    data: [300, 50, 100],
-    backgroundColor: [
-      'rgb(255, 99, 132)',
-      'rgb(54, 162, 235)',
-      'rgb(255, 205, 86)'
-    ],
+    label: 'Amount',
+    data: categoryValueArray,
     hoverOffset: 4,
     options:{
       responsive:false
