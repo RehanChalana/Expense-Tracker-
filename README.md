@@ -22,9 +22,12 @@ Bonus Features: <br />
 📆 Implement a budget planner feature to set monthly spending limits. <br />
 📦 Add local storage support for data persistence. <br />
 
-What's New:br
+What's New:
 💰 Continuously Balance showing. <br />
 📋 Add Transaction Budget. <br />
 📜 A big space listing all the transactions (can be scrolled). <br />
 💵 Add a money button. <br />
+
+What can be done:
+Adding monthly and weekly spent limits
 Project by: 🚀 Rehan Chalana
