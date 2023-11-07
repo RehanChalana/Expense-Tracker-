@@ -29,8 +29,8 @@ What's New:
 💵 Add a money button. <br />
 
 What can be added:
-Adding a settings page where you can tweak some settings 
---> Setting monthly and weekly spent limits
---> Reminders when these limits are reached
---> Savings analysis based on limits
+Adding a settings page where you can tweak some settings <br />
+--> Setting monthly and weekly spent limits <br />
+--> Reminders when these limits are reached <br />
+--> Savings analysis based on limits <br />
 Project by: 🚀 Rehan Chalana
