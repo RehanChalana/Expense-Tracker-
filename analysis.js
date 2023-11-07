@@ -25,7 +25,7 @@ document.getElementById('progGraph').style.backgroundImage=`radial-gradient(clos
 
 // ploting the main graph! day wise
 let user_id = sessionStorage.getItem("user_id");
-let historyData = await database.from("ExpenseHistory").select("Amount,Date,category").eq("user_id",user_id);
+let historyData = await database.from("ExpenseHistory").select("Amount,Date,category,Title").eq("user_id",user_id);
 let dayarray = [];
 let dayAmountArray = [];
 
@@ -164,3 +164,22 @@ const categoryGraph = new Chart(categoryGraphDiv,{
   type: 'doughnut',
   data: data3
 })
+
+// trying to update history column
+for(let i=0;i<historyData.data.length;i++){
+  let tempSrDiv = document.createElement('div');
+  let tempTitleDiv = document.createElement('div');
+  let tempAmountDiv = document.createElement('div');
+  let tempCategoryDiv = document.createElement('div');
+  let tempDateDiv = document.createElement('div');
+  tempSrDiv.innerHTML = i+1; 
+  tempTitleDiv.innerHTML = `<div class="historycolElement">${historyData.data[i]['Title']}</div>`
+  tempAmountDiv.innerHTML = `<div class="historycolElement">${'Rs '+historyData.data[i]['Amount']}</div>`
+  tempCategoryDiv.innerHTML = `<div class="historycolElement">${historyData.data[i]['category']}</div>`
+  tempDateDiv.innerHTML = `<div class="historycolElement">${historyData.data[i]['Date']}</div>`
+  document.querySelector('#serialNumber').appendChild(tempSrDiv);
+  document.querySelector('#transTitle').appendChild(tempTitleDiv);
+  document.querySelector('#transCategory').appendChild(tempCategoryDiv);
+  document.querySelector('#transAmount').appendChild(tempAmountDiv);
+  document.querySelector('#transDate').appendChild(tempDateDiv);
+}
