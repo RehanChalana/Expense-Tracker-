@@ -95,30 +95,24 @@ body{
     border-bottom: 2px solid #720e9e;
 }
 
+#your {
+    padding: 0 0 0 23px;
+    font-size: 24px;
+    color: #720e9e ;
+    opacity: 0.9;
+    font-weight: 760;
+    margin-bottom: 10px;
+}
+
 .header3{
     display: flex;
-    gap: 20px;
+    gap: 40px;
     justify-content: flex-start;
     padding-top: 10px;
 }
 
-#header3Title{
-    font-size: xx-large;
-    font-weight: bold;
-    /* border-bottom: 1px solid #720e9e; */
-    padding-top: 8px;
-    margin-left: 35px;
-
-}
-
-#dwm{
-    margin-left: 8px;
-    display: flex;
-    gap: 20px;
-}
-
-#dwm > div {
-    font-size: x-large;
+.header3 > div {
+    font-size: 40px;
     font-weight: bold;
     padding: 10px 10px 0 10px;
     opacity: 0.6;
@@ -126,12 +120,12 @@ body{
 }
 
 
-#dwm > div:hover{
+.header3 > div:hover{
     opacity: 1;
-    font-size: xx-large;
+    font-size: 50px;
     cursor: pointer;
 }
-#dwm > div::after {
+.header3 > div::after {
     content: '';
     display: block;
     width: 0;
@@ -140,27 +134,16 @@ body{
     transition: width .3s;
 }
 
-#dwm > div:hover::after {
+.header3 > div:hover::after {
     width: 95%;
     transition: width .3s;
 }
 
 
 #daily{
-    margin-left: 37px;
+    margin-left: 30px;
 }
 
-
-
-
-
-#your {
-    padding: 0 0 0 23px;
-    font-size: 24px;
-    color: #720e9e ;
-    opacity: 0.9;
-    font-weight: 760;
-}
 
 #analTitle{
     padding: 20px 0 0 20px;
@@ -169,6 +152,7 @@ body{
 }
 
 .row1{
+   margin-top: 8px; 
    display: flex; 
    justify-content: flex-start;
    padding-left: 29px;
