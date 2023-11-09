@@ -3,6 +3,56 @@ import {supabase_url,supabase_key} from './keys.js';
 const database = supabase.createClient(supabase_url,supabase_key);  
 const username = sessionStorage.getItem("user");
 
+
+
+//making the daily weekly yearly clickable 
+const daily = document.querySelector("#daily");
+const weekly = document.querySelector("#weekly");
+const monthly = document.querySelector("#monthly");
+
+daily.addEventListener("click",selectDaily);
+weekly.addEventListener("click",selectWeekly);
+monthly.addEventListener("click",selectMonthly);
+
+function selectDaily(){
+  let st = document.styleSheets[0].cssRules[17];
+  console.log(st);
+  st.style.width="95%";
+  daily.style.opacity="1";
+  daily.style.fontSize="50px"; 
+  weekly.style.opacity="0.6";
+  weekly.style.fontSize="40px";
+  monthly.style.opacity="0.6";
+  monthly.style.fontSize="40px";
+}
+
+function selectWeekly(){
+  let st = document.styleSheets[0].cssRules[20];
+  st.style.width="95%";
+  weekly.style.opacity="1";
+  weekly.style.fontSize="50px"; 
+  daily.style.fontSize="40px";
+  daily.style.opacity="0.6";
+  monthly.style.fontSize="40px";
+  monthly.style.opacity="0.6";
+}
+
+function selectMonthly(){
+  let st = document.styleSheets[0].cssRules[22];
+  st.style.width="95%";
+  monthly.style.opacity="1";
+  monthly.style.fontSize="50px";
+  weekly.style.opacity="0.6";
+  weekly.style.fontSize="40px";
+  daily.style.opacity="0.6"
+  daily.style.fontSize="40px";
+}
+
+
+
+
+
+
 // updating the progress graph
 const budgetImport = await database.from("users").select("Budget").eq("walletname",username);
 const balanceImport = await database.from("users").select("userBalance").eq("walletname",username);

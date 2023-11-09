@@ -125,7 +125,8 @@ body{
     font-size: 50px;
     cursor: pointer;
 }
-.header3 > div::after {
+
+ #daily::after {
     content: '';
     display: block;
     width: 0;
@@ -134,7 +135,7 @@ body{
     transition: width .3s;
 }
 
-.header3 > div:hover::after {
+ #daily:hover::after {
     width: 95%;
     transition: width .3s;
 }
@@ -142,6 +143,34 @@ body{
 
 #daily{
     margin-left: 30px;
+}
+
+#weekly::after{
+    content: '';
+    display: block;
+    width: 0;
+    height: 3px;
+    background: #720e9e;
+    transition: width .3s;
+}
+
+#weekly:hover::after{
+    width: 95%;
+    transition: width .3s;
+}
+
+#monthly::after{
+    content: '';
+    display: block;
+    width: 0;
+    height: 3px;
+    background: #720e9e;
+    transition: width .3s;
+} 
+
+#monthly:hover::after{
+    width: 95%;
+    transition: width .3s;
 }
 
 
