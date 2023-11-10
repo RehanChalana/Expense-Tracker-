@@ -131,8 +131,18 @@ var barGraph = new Chart(barGraphdiv, {
           color:'white'
         }
       }
+     },
+     plugins:{
+      legend:{
+        labels:{
+          color:'white',
+          font:{
+            size:22
+          }
+        }
+      }
      }
-  },
+  }
 });
 
 // reteriving category wise data 
