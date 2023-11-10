@@ -226,7 +226,7 @@ for(let i=0;i<historyData.data.length;i++){
   let tempAmountDiv = document.createElement('div');
   let tempCategoryDiv = document.createElement('div');
   let tempDateDiv = document.createElement('div');
-  tempSrDiv.innerHTML = i+1; 
+  tempSrDiv.innerHTML = `<div class="historycolElement">${i+1+"."}</div>` 
   tempTitleDiv.innerHTML = `<div class="historycolElement">${historyData.data[i]['Title']}</div>`
   tempAmountDiv.innerHTML = `<div class="historycolElement">${'Rs '+historyData.data[i]['Amount']}</div>`
   tempCategoryDiv.innerHTML = `<div class="historycolElement">${historyData.data[i]['category']}</div>`
@@ -237,3 +237,9 @@ for(let i=0;i<historyData.data.length;i++){
   document.querySelector('#transAmount').appendChild(tempAmountDiv);
   document.querySelector('#transDate').appendChild(tempDateDiv);
 }
+
+// making rows hoverable 
+const historyColElement = document.querySelector(".historycolElement");
+historyColElement.addEventListener('mouseover',()=>{
+  historyColElement.style.opacity="1";
+})
