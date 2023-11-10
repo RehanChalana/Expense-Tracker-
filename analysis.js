@@ -100,12 +100,12 @@ console.log(dayarray);
 console.log(dayAmountArray);
 console.log(historyData);
 
-const labels = dayarray;
+const labels = dayarray.slice(-7);
 const data = {
   labels: labels,
   datasets: [{
     label: 'Amount spent on date',
-    data: dayAmountArray,
+    data: dayAmountArray.slice(-7),
     backgroundColor: '#720e9e',
     borderWidth: 1
   }]
