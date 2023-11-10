@@ -13,11 +13,13 @@ const monthly = document.querySelector("#monthly");
 daily.addEventListener("click",selectDaily);
 weekly.addEventListener("click",selectWeekly);
 monthly.addEventListener("click",selectMonthly);
-
+let dailyAfter = document.styleSheets[0].cssRules[17];
+let weeklyAfter = document.styleSheets[0].cssRules[20];
+let monthlyAfter = document.styleSheets[0].cssRules[22];
 function selectDaily(){
-  let st = document.styleSheets[0].cssRules[17];
-  console.log(st);
-  st.style.width="95%";
+  dailyAfter.style.width="95%";
+  weeklyAfter.style.width="0%";
+  monthlyAfter.style.width="0%";
   daily.style.opacity="1";
   daily.style.fontSize="50px"; 
   weekly.style.opacity="0.6";
@@ -27,8 +29,9 @@ function selectDaily(){
 }
 
 function selectWeekly(){
-  let st = document.styleSheets[0].cssRules[20];
-  st.style.width="95%";
+  weeklyAfter.style.width="95%";
+  monthlyAfter.style.width="0%";
+  dailyAfter.style.width="0%";
   weekly.style.opacity="1";
   weekly.style.fontSize="50px"; 
   daily.style.fontSize="40px";
@@ -38,8 +41,9 @@ function selectWeekly(){
 }
 
 function selectMonthly(){
-  let st = document.styleSheets[0].cssRules[22];
-  st.style.width="95%";
+  monthlyAfter.style.width="95%";
+  dailyAfter.style.width="0%";
+  weeklyAfter.style.width="0%";
   monthly.style.opacity="1";
   monthly.style.fontSize="50px";
   weekly.style.opacity="0.6";
