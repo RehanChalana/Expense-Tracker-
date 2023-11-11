@@ -168,18 +168,38 @@ for(let i=0;i<historyData.data.length;i++){
  
 }
 
+// sorting the category wise data :!
+
+for(let i = 0; i<categoryCountArray.length;i++){
+  for(let j=i;j>0;j--){
+    if(categoryCountArray[j]<categoryCountArray[j-1]){
+      let temp = categoryCountArray[j-1];
+      categoryCountArray[j-1]=categoryCountArray[j];
+      categoryCountArray[j] = temp;
+
+      let temp2 = categoryArray[j-1];
+      categoryArray[j-1]= categoryArray[j];
+      categoryArray[j]=temp2;
+
+      let temp3 = categoryValueArray[j-1];
+      categoryValueArray[j-1]=categoryValueArray[j];
+      categoryValueArray[j]=temp3;
+    }
+  }
+}
+
 
 // ploting the horizontal bargraph!
 
 
 
-const labels2 = categoryArray;
+const labels2 = categoryArray.slice(-3);
 const data2 = {
   labels: labels2,
   datasets: [{
     label: 'Category Occurance',
     backgroundColor :['red','blue','green'],
-    data: categoryCountArray,
+    data: categoryCountArray.slice(-3),
     borderWidth: 1
   }]
 };
