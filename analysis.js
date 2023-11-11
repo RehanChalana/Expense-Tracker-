@@ -198,7 +198,6 @@ for(let i = 0; i<categoryCountArray.length;i++){
 // ploting the horizontal bargraph!
 
 
-
 const labels2 = categoryArray.slice(-3);
 const data2 = {
   labels: labels2,
@@ -274,15 +273,22 @@ for(let i=0;i<historyData.data.length;i++){
   tempAmountDiv.innerHTML = `<div class="historycolElement">${'Rs '+historyData.data[i]['Amount']}</div>`
   tempCategoryDiv.innerHTML = `<div class="historycolElement">${historyData.data[i]['category']}</div>`
   tempDateDiv.innerHTML = `<div class="historycolElement">${historyData.data[i]['Date']}</div>`
+  tempAmountDiv.style.color='#D22B2B';
+  tempTitleDiv.style.color='#9932cc';
   document.querySelector('#serialNumber').appendChild(tempSrDiv);
   document.querySelector('#transTitle').appendChild(tempTitleDiv);
   document.querySelector('#transCategory').appendChild(tempCategoryDiv);
   document.querySelector('#transAmount').appendChild(tempAmountDiv);
   document.querySelector('#transDate').appendChild(tempDateDiv);
+
+  if(i%2!=0){
+    tempTitleDiv.style.backgroundColor='#1b1b1b';
+    tempAmountDiv.style.backgroundColor='#1b1b1b';
+    tempSrDiv.style.backgroundColor='#1b1b1b';
+    tempCategoryDiv.style.backgroundColor='#1b1b1b';
+    tempDateDiv.style.backgroundColor='#1b1b1b';
+  }
 }
 
+
 // making rows hoverable 
-const historyColElement = document.querySelector(".historycolElement");
-historyColElement.addEventListener('mouseover',()=>{
-  historyColElement.style.opacity="1";
-})
