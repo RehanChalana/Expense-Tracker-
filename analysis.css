@@ -284,9 +284,12 @@ body{
     padding: 15px 30px 10px 30px;
 }
 
+#categoryGraph{
+    padding: 10px;
+}
+
 #ele23{
     padding: 15px 30px 10px 30px;
-    /* height: 450px; */
 }
 
 #ele23Title{

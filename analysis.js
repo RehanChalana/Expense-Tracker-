@@ -123,11 +123,17 @@ var barGraph = new Chart(barGraphdiv, {
         grid:{
           color:'white'
         },
+        ticks:{
+          color:'white'
+        }
         
       },
 
       y:{
         grid:{
+          color:'white'
+        },
+        ticks:{
           color:'white'
         }
       }
@@ -210,19 +216,14 @@ var barHor = new Chart(barHorDiv,{
   type: 'bar',
   data : data2,
   options : {
+    plugins:{
+      legend:{
+        display:false,
+      }
+    },
     responsive: false,
     indexAxis : 'y',
-    scales:{ y :{beginAtZero: false},
-    // x:{
-    //   grid:{
-    //     color:'white'
-    //   }
-    // },
-    // y:{
-    //   grid:{
-    //     color:''
-    //   }
-    // }
+    scales:{ y :{beginAtZero: false,ticks:{color:'white'}},x:{ticks:{color:'white'}}
   }
 }
 })
@@ -238,7 +239,7 @@ const data3 = {
     data: categoryValueArray,
     hoverOffset: 4,
     options:{
-      responsive:false
+      responsive:false,
     }
   }]
 };
@@ -247,7 +248,18 @@ let categoryGraphDiv = document.getElementById("categoryGraph").getContext("2d")
 
 const categoryGraph = new Chart(categoryGraphDiv,{
   type: 'doughnut',
-  data: data3
+  data: data3,
+  options:{
+    plugins:{
+      legend:{
+        display:true,
+        position:'top',
+        // font:{
+        //   Color:'white'
+        // }
+      }
+    },
+  }
 })
 
 // trying to update history column
