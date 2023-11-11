@@ -81,7 +81,7 @@ body{
     font-family: 'poppins',sans-serif;
     color: white; 
     background-image: url(./images/black-elegant-background-with-copy-space.jpg);
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     background-size: cover;
     display: flex;
     flex-direction: column;
@@ -273,9 +273,11 @@ body{
     padding: 15px 30px 10px 30px;
 }
 
-#barHorTitle{
+#row2Title{
     font-size: 23px;
     font-weight: bold;
+    padding-bottom: 7px;
+    border-bottom: #720e9e 2px solid;
 }
 
 #ele22{
@@ -296,38 +298,83 @@ body{
     padding-top: 12px;
     height: 335px;
     width: 335px;
+    
+}
+
+#ele23Bar > .range{
+    margin-bottom: 22px;
 }
 
 
-#ele23List{
-    margin: 0;
-    padding: 30px 10px 0 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+#limTitle{
+    margin-bottom: 5px;
+    font-size: 18px;
+    font-weight: 700;
 }
 
-#ele23List ::marker{
-    font-size: 40px;
-}
+.range {
+    position: relative;
+    border: white solid 2px;
+    width: 300px;
+    height: 30px;
+    transform: skew(30deg);
+    font-family: 'Orbitron', monospace;
+    
+    &:before {
+      --width: calc(var(--p) * 1%);
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 100%;
+      background-color: #720e9e;
+      z-index: 0;
+      animation: load .5s forwards linear;
+    }
+    
+    &:after {
+      counter-reset: progress var(--p);
+      content: counter(progress) '%';
+      color: #000;
+      position: absolute;
+      left: 5%;
+      top: 50%;
+      transform: translateY(-50%) skewX(-30deg);
+      z-index: 1;
+    }
+    
+    &__label {
+      transform: skew(-30deg) translateY(-100%);
+      line-height: 1.5;
+    }
+  }
 
-.liflex{
-    font-size: 23px;
-    display: flex;
-    justify-content: space-between;
-}
+  .dailyLimit{
+    &:before{
+        background-color: green;
+    }
+  }
 
-#li1{
-    color: blue;
-}
+  .monthlyLimit{
+    &:before{
+        background-color: #D22B2B;
+    }
+  }
 
-#li2{
-    color: green;
-}
+  .catLimit2{
+    &:before{
+        background-color: green;
+    }
+  }
+  
+  @keyframes load {
+    to {
+      width: var(--width);
+    }
+  }
 
-#li3{
-    color: skyblue;
-}
+
 
 .history{
     margin-top: 40px;
@@ -382,6 +429,10 @@ body{
 /* .historycolElement:hover{
     opacity: 1;
 } */
+
+
+  
+
 
 
 

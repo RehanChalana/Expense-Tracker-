@@ -234,6 +234,7 @@ const data3 = {
   labels: categoryArray,
   datasets: [{
     label: 'Amount',
+    backgroundColor :['#1f78b4','#33a02c','#ff7f00','#fdbf6f','#6a3d9a','#b15928' ],
     data: categoryValueArray,
     hoverOffset: 4,
     options:{
