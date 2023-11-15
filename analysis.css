@@ -19,6 +19,8 @@ body{
     height: 100%;
     overflow: auto;
     background-color: #121212;
+    /* flex-grow: 0;
+    flex-shrink: 0; */
 }
 
 .sideBar{
@@ -414,7 +416,7 @@ body{
 }
 
 #historyTable > div > div{
-    padding: 2px 40px 2px 50px;
+    padding: 2px 40px 2px 40px;
     border-bottom: #f1f1f1 1px solid;
     flex-wrap: nowrap;
 }
@@ -423,7 +425,6 @@ body{
     font-size: 40px;
     color: #121212;
     background-color: #720e9e;
-
 }
 
 .historycolElement{
@@ -436,6 +437,8 @@ body{
 .col4 > .historycolTitle{
     padding: 2px 20px 2px 20px;
 }
+
+
 
 .historycolElement:hover{
     opacity: 1;

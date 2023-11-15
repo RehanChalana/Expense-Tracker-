@@ -280,6 +280,7 @@ for(let i=0;i<historyData.data.length;i++){
   document.querySelector('#transCategory').appendChild(tempCategoryDiv);
   document.querySelector('#transAmount').appendChild(tempAmountDiv);
   document.querySelector('#transDate').appendChild(tempDateDiv);
+  tempTitleDiv.style.padding='2px 20px 2px 40px';
 
   if(i%2!=0){
     tempTitleDiv.style.backgroundColor='#1b1b1b';
