@@ -3,6 +3,13 @@ import {supabase_url,supabase_key} from './keys.js';
 const database = supabase.createClient(supabase_url,supabase_key);  
 const username = sessionStorage.getItem("user");
 
+const budgetImport = await database.from("users").select("Budget").eq("walletname",username);
+const balanceImport = await database.from("users").select("userBalance").eq("walletname",username);
+var Balance = balanceImport.data[0]["userBalance"]; 
+const BUDGET = budgetImport.data[0]["Budget"];
+
+
+
 
 
 //making the daily weekly yearly clickable 
@@ -13,6 +20,7 @@ const monthly = document.querySelector("#monthly");
 daily.addEventListener("click",selectDaily);
 weekly.addEventListener("click",selectWeekly);
 monthly.addEventListener("click",selectMonthly);
+monthly.addEventListener("click",updatemonthlygraph)
 let dailyAfter = document.styleSheets[0].cssRules[17];
 let weeklyAfter = document.styleSheets[0].cssRules[20];
 let monthlyAfter = document.styleSheets[0].cssRules[22];
@@ -58,10 +66,7 @@ function selectMonthly(){
 
 
 // updating the progress graph
-const budgetImport = await database.from("users").select("Budget").eq("walletname",username);
-const balanceImport = await database.from("users").select("userBalance").eq("walletname",username);
-var Balance = balanceImport.data[0]["userBalance"]; 
-const BUDGET = budgetImport.data[0]["Budget"];
+
 let totalExpense = BUDGET - Balance;
 let expensePercentage = ((totalExpense / BUDGET ))*100;
 expensePercentage = expensePercentage.toFixed(0);
@@ -76,12 +81,12 @@ document.getElementById('progGraph').style.backgroundImage=`radial-gradient(clos
 
 
 
-
 // ploting the main graph! day wise
 let user_id = sessionStorage.getItem("user_id");
 let historyData = await database.from("ExpenseHistory").select("Amount,Date,category,Title").eq("user_id",user_id);
 let dayarray = [];
 let dayAmountArray = [];
+let monthdata = {"01":0,"02":0,"03":0,"04":0,"05":0,"06":0,"07":0,"08":0,"09":0,"10":0,"11":0,"12":0}
 
 for(let i = 0; i < historyData.data.length;i++){
   if(!dayarray.includes(historyData.data[i]["Date"])){
@@ -92,15 +97,16 @@ for(let i = 0; i < historyData.data.length;i++){
         sum+=historyData.data[j]["Amount"];
       }
     }
+    monthdata[historyData.data[i]["Date"].slice(5,7)]+=historyData.data[i]["Amount"];
     dayarray.push(historyData.data[i]["Date"]);
     dayAmountArray.push(sum);
   }
 }
-console.log(dayarray);
-console.log(dayAmountArray);
+console.log("month data")
+console.log(Object.keys(monthdata))
 console.log(historyData);
 
-const labels = dayarray.slice(-7);
+let labels = dayarray.slice(-7);
 const data = {
   labels: labels,
   datasets: [{
@@ -151,6 +157,12 @@ var barGraph = new Chart(barGraphdiv, {
   }
 });
 
+
+// updating data monthly
+function updatemonthlygraph(){
+  barGraphdiv.clearRect(0, 0, canvas.width, canvas.height);
+}
+
 // reteriving category wise data 
 
 let categoryArray = [];
@@ -173,6 +185,8 @@ for(let i=0;i<historyData.data.length;i++){
   }
  
 }
+
+
 
 // sorting the category wise data :!
 
@@ -210,7 +224,6 @@ const data2 = {
 };
 
 let barHorDiv = document.getElementById("barHor").getContext("2d");
-
 var barHor = new Chart(barHorDiv,{
   type: 'bar',
   data : data2,

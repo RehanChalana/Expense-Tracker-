@@ -320,7 +320,7 @@ body{
 }
 
 .range {
-    position: relative;
+    /* position: relative; */
     border: white solid 2px;
     width: 300px;
     height: 30px;
@@ -369,10 +369,13 @@ body{
     }
   }
 
-  .catLimit2{
+  /* .catLimit2{
     &:before{
         background-color: green;
     }
+  } */
+  .catLimit2::before{
+    background-color: green;
   }
   
   @keyframes load {
@@ -410,7 +413,7 @@ body{
     /* justify-content: center; */
     /* position:fixed; */
     /* border-bottom: #f1f1f1 2px solid; */
-    border: 2px white solid;
+    /* border: 2px white solid; */
 }
 
 #historyTable > div {
