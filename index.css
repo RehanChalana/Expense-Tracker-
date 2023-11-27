@@ -11,9 +11,12 @@ body {
     background-size: cover;
     min-height: 100vh;
 }
+
+
 /* .detailBox {
-    padding: 70px 180px 70px 180px;
-    background-color: black;
+    padding: 100px 200px 100px 200px;
+    background-color: #121212;
+    background-size: cover;
 } */
 
 .inputBox {
@@ -31,7 +34,7 @@ body {
     /* background-color: aqua; */
     gap: 8px;
     border:solid white ;
-    background: rgba(0, 0, 0, 0.3)
+    background: rgba(0, 0, 0, 0.7)
 }
 
 .inputBox > .inputWithIcon > input,select{
@@ -40,7 +43,7 @@ body {
     border-radius: 50px;
 }
 
-.inputBox > a > button {
+.inputBox > #submitLink > button {
     padding: 10px 20px 10px 20px;
     margin-top: 3px;
     border-radius: 50px;
@@ -72,26 +75,27 @@ body {
     align-self: center;
 }
 
-a{
-    margin-top: 25px;
-    padding: 0;
-
+#fPass{
+    padding: 0px 0px 0px 7px;
 }
 
-a > button {
+#submitLink{
+    margin-top: 25px;
+    padding: 0;
+}
+
+#submitLink > button {
     width: 100%;
     /* opacity: 0.75; */
     background-color: #720e9e;
     /* color: white; */
     font-size: larger;
     font-weight: 700;
-    margin-top: 18px;
+    /* margin-top: 18px; */
     border: 1px solid white;
 }
 
-.bottomRegister{
-    color: white;
-}
+
 
 
 .inputWithIcon {
@@ -101,7 +105,7 @@ a > button {
 .icon {
     position: absolute;
     right: 20px; /* Adjust this value to control the icon's position */
-    top: 55%;
+    top: 50%;
     transform: translateY(-50%);
     color: #720e9e;
 }
@@ -109,3 +113,13 @@ a > button {
 .inputWithIcon input {
     padding-right: 30px; /* Adjust this value to leave space for the icon */
 }
+
+.bottomSignup{
+    align-self: center;
+    padding: 10px;
+    color: white;
+    display: flex;
+    gap: 30px;
+}
+
+
