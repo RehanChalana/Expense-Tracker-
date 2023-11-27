@@ -1,5 +1,6 @@
 *{
     margin: 0;
+    font-family:  'poppins',sans-serif;
 }
 body {
     display: flex;
@@ -20,58 +21,91 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    border-radius: 20px;
     /* align-items: center; */
 }
 
 .inputBox{
     align-self: stretch;
-    padding: 20px;
+    padding: 20px 25px 20px 25px;
     /* background-color: aqua; */
     gap: 8px;
     border:solid white ;
+    background: rgba(0, 0, 0, 0.3)
 }
 
-.inputBox > input,select,button {
-    padding: 10px 8px 10px 8px;
+.inputBox > .inputWithIcon > input,select{
+    padding: 10px 20px 10px 20px;
     margin-top: 3px;
+    border-radius: 50px;
+}
+
+.inputBox > a > button {
+    padding: 10px 20px 10px 20px;
+    margin-top: 3px;
+    border-radius: 50px;
+    
+}
+
+.inputBox > .inputWithIcon > input{
+    margin-bottom: 8px;
 }
 
 /* .addTrans > input,select,option,button {
     color: black;
 }*/
 
-.inputBox > input,select {
+.inputBox > .inputWithIcon > input,select {
     background-color: black;
     color: white;
-    opacity: 0.8;
+    /* opacity: 0.8; */
     border: solid #720e9e 1px;
     font-size: large;
 }
 
-.inputBox > label {
-    font-size: large;
-    color: white;
-}
-
 .inputBox > h2 {
     font-size: xx-large;
-    margin-bottom: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
     color: #9932cc;
-    border-bottom: solid white 1px;
+    /* border-bottom: solid white 1px; */
+    align-self: center;
 }
 
 a{
-    margin: 0;
+    margin-top: 25px;
     padding: 0;
+
 }
 
 a > button {
     width: 100%;
-    opacity: 0.75;
+    /* opacity: 0.75; */
     background-color: #720e9e;
-    color: white;
+    /* color: white; */
     font-size: larger;
     font-weight: 700;
-    margin-top: 18px
-    
+    margin-top: 18px;
+    border: 1px solid white;
+}
+
+.bottomRegister{
+    color: white;
+}
+
+
+.inputWithIcon {
+    position: relative;
+}
+
+.icon {
+    position: absolute;
+    right: 20px; /* Adjust this value to control the icon's position */
+    top: 55%;
+    transform: translateY(-50%);
+    color: #720e9e;
+}
+
+.inputWithIcon input {
+    padding-right: 30px; /* Adjust this value to leave space for the icon */
 }
