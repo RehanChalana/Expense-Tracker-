@@ -33,4 +33,7 @@ Adding a settings page where you can tweak some settings <br />
 --> Setting monthly and weekly spent limits <br />
 --> Reminders when these limits are reached <br />
 --> Savings analysis based on limits <br />
+--> generate pdf reports which users can download <br/>
+--> export to spreadsheet
+--> add sound effects
 Project by: 🚀 Rehan Chalana
