@@ -61,7 +61,7 @@ function addExpense() {
 
 async function exportHistory(){
     try{
-         const historyExport = await database.from("ExpenseHistory").insert([
+        const historyExport = await database.from("ExpenseHistory").insert([
         {"user_id":user_idVal,"Amount":expense.value,"Title":title.value,"category":category.value,"Date":date.value}])
         console.log("added successfully",historyExport)
     } catch (error){
