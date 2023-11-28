@@ -84,6 +84,8 @@ document.getElementById('progGraph').style.backgroundImage=`radial-gradient(clos
 // ploting the main graph! day wise
 let user_id = sessionStorage.getItem("user_id");
 let historyData = await database.from("ExpenseHistory").select("Amount,Date,category,Title").eq("user_id",user_id);
+console.log("historyData")
+console.log(historyData);
 let dayarray = [];
 let dayAmountArray = [];
 let monthdata = {"01":0,"02":0,"03":0,"04":0,"05":0,"06":0,"07":0,"08":0,"09":0,"10":0,"11":0,"12":0}
