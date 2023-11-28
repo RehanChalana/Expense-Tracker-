@@ -1,3 +1,4 @@
+
 from flask import Flask, request, send_file
 from flask_cors import CORS
 import json
@@ -17,16 +18,20 @@ def generate_pdf(data):
 
     # Add a title
     c.drawString(100, 750, "Expense Report")
+    
 
     # Add expenses to the PDF
     y_position = 730  # Initial Y position for expenses
-    for i in range(len(data)):
+    # x=100
+    for i in data:
+        amount = i
         # Add expense details to the PDF
-        temp = data
-        c.drawString(100, y_position, data[i])
+        c.drawString(16,y_position, f"${amount}")
         y_position -= 20  # Move to the next line
+        # x+=10
 
     # Add total
+    # total = data.get('total', 0)
     # c.drawString(100, y_position, f"Total: ${total}")
 
     # Save the PDF
@@ -37,8 +42,8 @@ def generate_pdf(data):
 @app.route('/generate_pdf', methods=['POST'])
 def generate_pdf_endpoint():
     data = request.get_json()  # Retrieve JSON data from the request
-    generate_pdf(data)
-    return send_file("expense_report.pdf", as_attachment=True)
+    file = generate_pdf(data)
+    return send_file(file, as_attachment=True)
 
 if __name__ == '__main__':
     app.run(port=5000)
