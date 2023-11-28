@@ -10,22 +10,17 @@ CORS(app)
 def generate_pdf(data):
     # Your PDF generation logic here...
     # Create a PDF document
+    
+    name=data["userData"][0]["walletname"]
+    budget=data["userData"][0]["Budget"]
+    userBalance=data["userData"][0]["userBalance"]
     pdf_filename = "expense_report.pdf"
     c = canvas.Canvas(pdf_filename)
-
-    # Set font and font size
-   
-
-    # Add a title
-    # c.drawString(100, 750, "Expense Report")
-    
-
-    # Add expenses to the PDF
     y=750
     c.setFont("Helvetica",25)
-    
-    c.drawString(230,800,f"Expense Report!")
-    
+    c.drawString(50,820,f"Expense Report! For {name}'s Wallet")
+    c.drawString(30,790,f"Balance:{userBalance}")
+    c.drawString(220,790,f"Budget:{budget}")
     c.drawString(90,750,f"Title")
     c.drawString(240,750,f"Amount")
     c.drawString(340,750,f"Date")
@@ -34,7 +29,7 @@ def generate_pdf(data):
     
     y_position = 730  # Initial Y position for expenses
     # x=100
-    for i in data:
+    for i in data["historyData"]:
         Title = i["Title"]
         amount = i["Amount"]
         Date = i["Date"]
