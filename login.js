@@ -1,48 +1,6 @@
 import {supabase_url,supabase_key} from './keys.js';
 const database = supabase.createClient(supabase_url,supabase_key); 
 
-let isOnLogin = true;
-
-// Making signup working!
-document.querySelector("#Signup").addEventListener("click",changeSignup);
-
-function changeSignup(){
-isOnLogin = false;
-console.log(isOnLogin);
-document.querySelector("#Title").innerText="Sign Up"
-let confirmPassword = document.createElement("input");
-confirmPassword.setAttribute("type","password");
-confirmPassword.setAttribute("placeholder","Confirm Password")
-confirmPassword.setAttribute("class","confirmPassword");
-let confirmPasswordDiv = document.createElement("div");
-confirmPasswordDiv.setAttribute("class","inputWithIcon");
-confirmPasswordDiv.innerHTML=`<i class="fa fa-lock fa-lg icon"></i>`;
-confirmPasswordDiv.appendChild(confirmPassword);
-document.querySelector("#fPass").remove();
-document.querySelector(".bottomText").innerText = "Already a User?";
-document.querySelector("#Signup").innerText="Login";
-document.querySelector(".inputBox").insertBefore(confirmPasswordDiv,document.querySelector("#submitLink"));
-}
-
-
-// sending signup data
-document.querySelector(".submitButton").addEventListener("click",exportSignup);
-
-function exportSignup(){
-    if(isOnLogin=true){
-        return;
-    }
-    let pass = document.querySelector("#passwordIn").value();
-    if(pass==document.querySelector(".confirmPassword").value()){
-        alert("User added")
-    } else{
-        alert("Please Confirm your password correctly!")
-    }
-}
-
-// Checking login
-
-
 const getUserDetails =  await database.from('users').select('walletname');
 // console.log(getUserDetails.data[]["walletname"]);
 let wallet_name;
@@ -51,9 +9,6 @@ let isUser = false;
 let balance_in;
 document.querySelector(".submitButton").addEventListener("click", checkLogin);
 async function checkLogin(){
-    if(isOnLogin==false){
-        return;
-    }
     wallet_name = document.querySelector("#walletNameIn").value;
     password_in = document.querySelector("#passwordIn").value;
     for(let i=0; i<getUserDetails.data.length;i++){

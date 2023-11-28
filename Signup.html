@@ -8,13 +8,11 @@
     <link rel="stylesheet"
           href=
 "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-
 </head>
 <body>
     <div class="detailBox">
         <div class="inputBox">
-            <h2 id="Title">Login</h2>
+            <h2 id="Title">Signup</h2>
             <div class="inputWithIcon">
             <i class="fa fa-user fa-lg icon"></i>
             <input id="walletNameIn" type="text" placeholder="Wallet Name">
@@ -23,16 +21,22 @@
             <input id="passwordIn" type="password" placeholder="Password">
             <i class="fa fa-lock fa-lg icon"></i>
             </div>
-            <a id="fPass"href="#">Forget Password?</a>
+            <div class="inputWithIcon">
+                <input id="passwordCheck" type="password" placeholder="Password">
+                <i class="fa fa-lock fa-lg icon"></i>
+            </div>
+            <div class="budgetIn inputWithIcon">
+                <input id="budgetImport" type="number" placeholder="setBudget">
+            </div>
             <a id="submitLink" href="#"><button class="submitButton">Submit</button></a>
 
             <div class="bottomSignup">
-                <div class="bottomText">don't have a account?</div> 
-                <a id="Signup" href="./Signup.html">Sign up</a></div>
+                <div class="bottomText">Already a user?</div> 
+                <a id="Signup" href="./index.html">Login</a></div>
         </div>
     </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
-<script type="module" src="login.js"></script>
+<script type="module" src="Signup.js"></script>
 
 </html>
