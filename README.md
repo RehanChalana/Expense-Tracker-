@@ -34,6 +34,7 @@ Adding a settings page where you can tweak some settings <br />
 --> Reminders when these limits are reached <br />
 --> Savings analysis based on limits <br />
 --> generate pdf reports which users can download <br/>
---> export to spreadsheet
+--> export to spreadsheet<br/>
 --> add sound effects
+--> This all features can be added to a new utilties page!! 
 Project by: 🚀 Rehan Chalana
