@@ -1,16 +1,17 @@
-
 from flask import Flask, request, send_file
 from flask_cors import CORS
 import json
 from reportlab.pdfgen import canvas
+import openpyxl
+import csv  
+from datetime import datetime
 
 app = Flask(__name__)
 CORS(app)
 
 def generate_pdf(data):
     # Your PDF generation logic here...
-    # Create a PDF document
-    
+    # Create a PDF document 
     name=data["userData"][0]["walletname"]
     budget=data["userData"][0]["Budget"]
     userBalance=data["userData"][0]["userBalance"]
@@ -40,21 +41,70 @@ def generate_pdf(data):
         c.drawString(350,y_position,f"{Date}")
         c.drawString(450,y_position,f"{category}")
         y_position -= 20  # Move to the next line
-        # x+=10
-
-    # Add total
-    # total = data.get('total', 0)
-    # c.drawString(100, y_position, f"Total: ${total}")
-
-    # Save the PDF
     c.save()
 
     return pdf_filename
 
+def generate_xl(data):
+       # Create a new Excel workbook and add a worksheet
+    wb = openpyxl.Workbook()
+    ws = wb.active
+
+    # Write headers to the worksheet
+    headers = ["Title", "Amount", "Date", "Category"]
+    for col_num, header in enumerate(headers, 1):
+        ws.cell(row=1, column=col_num, value=header)
+
+    # Write data to the worksheet
+    for row_num, expense in enumerate(data["historyData"], 2):
+        ws.cell(row=row_num, column=1, value=expense["Title"])
+        ws.cell(row=row_num, column=2, value=expense["Amount"])
+        ws.cell(row=row_num, column=3, value=expense["Date"])
+        ws.cell(row=row_num, column=4, value=expense["category"])
+
+    # Save the workbook to a file
+    xl_filename = "expense_report.xlsx"
+    wb.save(xl_filename)
+
+    return xl_filename
+
+def generate_csv(data):
+    # Your CSV generation logic here...
+    # Create a CSV file
+    
+    csv_filename = "expense_report.csv"
+
+    with open(csv_filename, 'w', newline='') as csvfile:
+        fieldnames = ["Title", "Amount", "Date", "category"]
+        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+
+        # Write headers to the CSV file
+        writer.writeheader()
+
+        # Write data to the CSV file
+        for expense in data["historyData"]:
+        # Convert the date string to a datetime object
+            date_str = expense["Date"]
+            date_obj = datetime.strptime(date_str, "%Y-%m-%d").date()
+            expense["Date"] = date_obj.strftime("%Y-%m-%d")
+
+            writer.writerow(expense)
+
+    return csv_filename
+    
+
 @app.route('/generate_pdf', methods=['POST'])
 def generate_pdf_endpoint():
     data = request.get_json()  # Retrieve JSON data from the request
-    file = generate_pdf(data)
+    if(data["request"]=="pdf"):
+        file = generate_pdf(data)
+        
+    if(data["request"]=="xl"):
+        file = generate_xl(data)
+        
+    if(data["request"]=="csv"):
+        file = generate_csv(data)
+    
     return send_file(file, as_attachment=True)
 
 if __name__ == '__main__':
