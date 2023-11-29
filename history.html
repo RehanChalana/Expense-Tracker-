@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History</title>
+    <link rel="stylesheet" href="./analysis.css">
+    <link rel="stylesheet" href="./history.css">
+</head>
+<body>
+  <div class="sideBar">
+    <div id="topSideBar">
+        <a href="./index.html"><img id="profileIcon" src="./images/icons8-user-96.png"></a> 
+      </div>
+      <div id="middleSideBar">
+        <a href="./DashBoard.html"><img id="walletIcon" src="./images/icons8-wallet-64.png"></a>
+        <a href="./analysis.html"><img id="dashboardIcon" src="./images/icons8-dashboard-100.png"></a>
+        <a href="./history.html"><img id="historyIcon" src="./images/icons8-history-96.png"></a>
+      </div>
+      <div id="endSideBar"><a><img id="settingIcon" src="./images/icons8-setting-64.png"></a></div>
+</div>
+
+    <div class="history">
+        <div id="historyTitle">Expense History</div>
+        <div id="history options">
+          <button  class="historyBtn" id="downloadBtn">Download As PDF</button>
+          <button class="historyBtn" id="exportToExcel">Export to Excel</button>
+        </div>
+        <div id="historyTable">
+          <div></div>
+          <div class="col1" id="serialNumber">
+            <div class="historycolTitle">0.</div>
+            <!-- <div class="historycolElement">2.</div> -->
+            <!-- <div class="historycolElement">3.</div> -->
+          </div>
+          <div class="col2" id="transTitle">
+            <div class="historycolTitle">Dummy</div>
+            <!-- <div class="historycolElement">Maggie</div> -->
+            <!-- <div class="historycolElement">Oreo Shake</div> -->
+          </div>
+          <div class="col3" id="transCategory">
+            <div class="historycolTitle">Category</div>
+            <!-- <div class="historycolElement">Snacks</div> -->
+            <!-- <div class="historycolElement">Snacks</div> -->
+          </div>
+          <div class="col4" id="transDate">
+            <div class="historycolTitle">YYYY-MM-DD</div>
+            <!-- <div class="historycolElement">2023-12-10</div> -->
+            <!-- <div class="historycolElement">2023-12-10</div> -->
+          </div>
+          <div class="col5" id="transAmount">
+            <div class="historycolTitle">Rs 0000.00</div>
+            <!-- <div class="historycolElement">Rs 100.00</div> -->
+            <!-- <div class="historycolElement">Rs 100.00</div> -->
+          </div>
+        </div>
+      </div>
+    
+</body>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+<script type="module" src="./history.js"></script>
+<script type="module" src="./download.js"></script>
+</html>
