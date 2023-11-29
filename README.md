@@ -35,6 +35,6 @@ Adding a settings page where you can tweak some settings <br />
 --> Savings analysis based on limits <br />
 --> generate pdf reports which users can download <br/>
 --> export to spreadsheet<br/>
---> add sound effects
+--> add sound effects<br/>
 --> This all features can be added to a new utilties page!! 
 Project by: 🚀 Rehan Chalana

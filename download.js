@@ -5,13 +5,41 @@ let userData = await database.from("users").select("walletname,Budget,userBalanc
 console.log(userData)
 let historyData = await database.from("ExpenseHistory").select("Amount,Date,category,Title").eq("user_id",user_id);
 console.log(historyData.data)
-const downlaod_btn =document.querySelector("#downloadBtn");
-downlaod_btn.addEventListener("click",download);
+
+
+let dataExportPY = {"request":"pdf","historyData":historyData.data,"userData":userData.data};
+
+// pdf download
+const downlaod_btn = document.querySelector("#downloadBtn");
+downlaod_btn.addEventListener("click",pdfDownload);
+
+function pdfDownload(){
+    dataExportPY["request"]="pdf";
+    download();
+}
+
+// xl download 
+const excelBtn = document.querySelector("#exportToExcel");
+excelBtn.addEventListener("click",excelDownload);
+
+function excelDownload(){
+    dataExportPY["request"]="xl"
+    download();
+}
+
+// csv download 
+
+const csvBtn = document.querySelector("#exportToCSV");
+
+csvBtn.addEventListener("click",csvDownload);
+
+function csvDownload(){
+    dataExportPY["request"]="csv";
+    download();
+}
 
 function download(){  
 // Sample data (replace this with your actual expense data)
-
-let dataExportPY = {"historyData":historyData.data,"userData":userData.data};
 
 fetch('http://localhost:5000/generate_pdf', {
     method: 'POST',
@@ -25,7 +53,14 @@ fetch('http://localhost:5000/generate_pdf', {
     const url = window.URL.createObjectURL(new Blob([blob]));
     const a = document.createElement('a');
     a.href = url;
-    a.download = 'expense_report.pdf';
+    if(dataExportPY["request"]=="pdf"){
+        a.download = 'expense_report.pdf';
+    } else if(dataExportPY["request"]=="xl"){
+        a.download = 'expense_report.xlsx'
+    } else if(dataExportPY["request"]=="csv"){
+        a.download = 'expense_report.csv'
+    }
+    
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
