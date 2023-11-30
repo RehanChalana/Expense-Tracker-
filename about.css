@@ -1,0 +1,81 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins' , sans-serif ;
+}
+
+div{
+    border: 2px solid red;
+}
+.panel{
+    height: 100vh;
+    background-image: url("./images/slide-01.jpg");
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:flex-start;
+    transition: background-image 1s ease-in-out;
+}
+
+.Title{
+    color: white;
+    padding: 10px 0px 10px 70px;
+    font-size: 60px;
+    font-weight: 700;
+    width: 40%;
+}
+
+.subTitle{
+    padding: 10px 0px 10px 70px;
+    color: white;
+    width:50%;
+    font-size: 18px;
+}
+
+.titleSpan{
+    color: #720e9e;
+    font-weight: 730;
+}
+
+.titleButtons{
+    padding: 10px 0px 10px 70px;
+    display: flex;
+    gap: 15px;
+}
+
+#loginBtn,#registerBtn{
+
+    font-size: 20px;
+    font-weight: 500;
+    color: white;
+    border-radius: 7px;
+}
+
+#loginBtn{
+    padding: 8px 20px 8px 20px;
+    background-color: #43ba7f;
+}
+
+#registerBtn{
+    padding: 8px 15px 8px 15px;
+    background-color: #ff511a;
+}
+
+.featuresBox{
+    padding: 60px;
+    display: flex;
+    gap:10px;
+    flex-wrap: wrap;
+    flex-basis: 80%;
+}
+
+.feat{
+    padding: 20px;
+    display: flex;
+    max-width: 500px;
+}
+
+.icon{
+    font-size:60px;
+}
