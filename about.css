@@ -208,10 +208,23 @@
 }
 
 #footMailBtn{
-    margin-top: 5px;
-    margin-left: 5px;
+    margin-top: 8px;
+    margin-left: 2px;
     border-radius: 17px;
-    padding: 10px 15px 10px 15px;
+    padding: 8px 15px 8px 15px;
     font-size: large;
     font-weight: 600;
+    background-color: #43ba7f;
+}
+
+.footSocialIcon{
+    font-size: 25px;
+
+}
+
+.mailIconsDiv{
+    margin-left: 5px;
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
 }
