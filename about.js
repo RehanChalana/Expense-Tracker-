@@ -26,12 +26,9 @@ setInterval(changeBackground, 3000);
 
 // adding load animation to feat
 document.addEventListener('DOMContentLoaded', function() {
-    var myElements = document.querySelectorAll('.feat'); // Change '.myElementClass' to your actual selector
-  
-    myElements.forEach(function (element) {
-      element.classList.add('hidden'); // Optionally add 'hidden' class to set initial state
-    });
-  
+
+    var featElements = document.querySelectorAll('.feat');
+    var statElements = document.querySelectorAll('.stat');
     function isElementInViewport(el) {
       if (!el || typeof el.getBoundingClientRect !== 'function') {
         return false;
@@ -47,16 +44,25 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   
     function handleVisibility() {
-      myElements.forEach(function (element) {
+      featElements.forEach(function (element) {
         if (isElementInViewport(element)) {
           element.classList.add('visible');
         } else{
             element.classList.remove('visible');
         }
       });
-    }
-  
+
+      statElements.forEach(function (element){
+        if(isElementInViewport(element)) {
+            element.classList.add('statLoaded')
+        } else{
+            element.classList.remove('statLoaded');
+        }
+    })}
     window.addEventListener('scroll', handleVisibility);
-    // Check visibility on page load
+
     handleVisibility();
   });
+
+
+// making stat elements having loading animation
