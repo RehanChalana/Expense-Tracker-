@@ -172,3 +172,46 @@
     opacity: 1;
     transform: translateX(0);
 }
+
+.footer{
+    color: white;
+    padding: 30px 50px 30px 150px;
+    display: flex;
+    gap:60px;
+    background-color: #301934;
+}
+
+.foot{
+    max-width: 310px;
+    padding: 25px;
+}
+
+.footTitle{
+    font-size: 23px;
+    font-weight: 560;
+    margin-bottom: 17px;
+}
+
+.footText{
+    font-size: 18px;
+    padding: 4px 5px 6px 5px;
+}
+
+.footText > a{
+    text-decoration: none;
+    color: white;
+}
+
+#footMailIn{
+    padding: 8px 25px 8px 25px;
+    border-radius: 19px;
+}
+
+#footMailBtn{
+    margin-top: 5px;
+    margin-left: 5px;
+    border-radius: 17px;
+    padding: 10px 15px 10px 15px;
+    font-size: large;
+    font-weight: 600;
+}
