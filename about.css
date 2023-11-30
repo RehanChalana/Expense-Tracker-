@@ -42,6 +42,7 @@
     padding: 10px 0px 10px 70px;
     display: flex;
     gap: 15px;
+    cursor: pointer;
 }
 
 #loginBtn,#registerBtn{

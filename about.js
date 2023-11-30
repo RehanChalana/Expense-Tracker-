@@ -1,3 +1,17 @@
+// making buttons redirect to links
+document.querySelector("#loginBtn").addEventListener('click',function(){
+    window.location.href="index.html"
+})
+
+document.querySelector("#registerBtn").addEventListener('click',function(){
+    window.location.href="Signup.html"
+})
+
+
+
+
+
+
 // making images go in a loop
 let panel = document.querySelector(".panel");
 let images = ["url(./images/slide-01.jpg)","url(./images/slide-02.jpg)","url(./images/slide-03.jpg)"];
