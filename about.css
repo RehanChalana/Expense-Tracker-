@@ -4,9 +4,9 @@
     font-family: 'Poppins' , sans-serif ;
 }
 
-div{
+/* div{
     border: 2px solid red;
-}
+} */
 
 
 .panel{
@@ -126,26 +126,42 @@ div{
 .statsBox{
     color: white;
     background-color: #282828;
-    padding: 100px;
+    padding: 100px 100px 100px 130px;
     display: flex;
-    gap:20px;
+    gap:34px;
+    
 }
 
 .stat{
-    padding: 50px;
+    /* padding: 10px; */
     background-color: #121212;
     text-align: center;
-    
+    box-shadow: 5px 5px 7px 4px #720e9e;
+} 
+
+.statIconBox{
+    padding:  40px 80px 40px 80px ;
+}
 
 .statNum{
     font-size: 50px;
     font-weight: 700;
     color:#720e9e;
+    background-color: #18191A;
+    padding: 10px 0px 5px 0px;
 }
-}
+
 
 .statText{
     font-size: 30px;
     font-weight: 500;
-    
+    background-color: #18191A;
+    padding: 0px 0px 40px 0px;
+}
+
+.statIcon{
+    font-size: 120px;
+    color:#720e9e;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #720e9e;
 }
