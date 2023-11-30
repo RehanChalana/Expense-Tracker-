@@ -4,9 +4,9 @@
     font-family: 'Poppins' , sans-serif ;
 }
 
-div{
+/* div{
     border: 2px solid red;
-}
+} */
 .panel{
     height: 100vh;
     background-image: url("./images/slide-01.jpg");
@@ -28,7 +28,7 @@ div{
 
 .subTitle{
     padding: 10px 0px 10px 70px;
-    color: white;
+    color: #B3B3B3;
     width:50%;
     font-size: 18px;
 }
@@ -63,22 +63,36 @@ div{
 }
 
 .featuresBox{
-    padding: 100px 100px 100px 130px;
+    padding: 70px 100px 100px 110px;
     display: flex;
     gap:20px;
     flex-wrap: wrap;
     flex-basis: 90%;
+    color: white;
+    background-color: #121212;
 }
 
 .feat{
+    opacity: 0;
+    transform: translateY(20px);
     padding: 35px 50px 35px 35px;
     display: flex;
     max-width: 500px;
     gap: 20px;
+    background-color: #282828;
+    margin-right: 10px;
+    box-shadow: 5px 5px 7px #404040;
+    transition: opacity 0.5s, transform 0.5s ease-in-out;
+}
+
+.visible{
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .icon{
     font-size:60px;
+    color: #720e9e;
 }
 
 .featTitle{
@@ -91,3 +105,16 @@ div{
     padding: 0px 10px 10px 0px;
     font-weight:530;
 }
+
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .feat {
+    animation: fadeIn 0.5s ease-in-out;
+  }
