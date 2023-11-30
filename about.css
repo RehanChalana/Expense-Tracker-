@@ -63,19 +63,31 @@ div{
 }
 
 .featuresBox{
-    padding: 60px;
+    padding: 100px 100px 100px 130px;
     display: flex;
-    gap:10px;
+    gap:20px;
     flex-wrap: wrap;
-    flex-basis: 80%;
+    flex-basis: 90%;
 }
 
 .feat{
-    padding: 20px;
+    padding: 35px 50px 35px 35px;
     display: flex;
     max-width: 500px;
+    gap: 20px;
 }
 
 .icon{
     font-size:60px;
+}
+
+.featTitle{
+    font-size: 25px;
+    font-weight: 700;
+    padding-bottom:20px ;
+}
+
+.featBottom{
+    padding: 0px 10px 10px 0px;
+    font-weight:530;
 }
