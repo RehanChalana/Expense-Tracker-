@@ -4,9 +4,11 @@
     font-family: 'Poppins' , sans-serif ;
 }
 
-/* div{
+div{
     border: 2px solid red;
-} */
+}
+
+
 .panel{
     height: 100vh;
     background-image: url("./images/slide-01.jpg");
@@ -119,3 +121,31 @@
   .feat {
     animation: fadeIn 0.5s ease-in-out;
   }
+
+
+.statsBox{
+    color: white;
+    background-color: #282828;
+    padding: 100px;
+    display: flex;
+    gap:20px;
+}
+
+.stat{
+    padding: 50px;
+    background-color: #121212;
+    text-align: center;
+    
+
+.statNum{
+    font-size: 50px;
+    font-weight: 700;
+    color:#720e9e;
+}
+}
+
+.statText{
+    font-size: 30px;
+    font-weight: 500;
+    
+}
