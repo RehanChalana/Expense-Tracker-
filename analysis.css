@@ -17,8 +17,9 @@ body{
     background-color: #f1f1f1;
     position: fixed;
     height: 100%;
-    overflow: auto;
+    /* overflow: auto; */
     background-color: #121212;
+    border-right: 3px solid #720e9e ;
     /* flex-grow: 0;
     flex-shrink: 0; */
 }
@@ -111,6 +112,7 @@ body{
     gap: 40px;
     justify-content: flex-start;
     padding-top: 10px;
+    background-color: #121212;
 }
 
 .header3 > div {
@@ -183,11 +185,12 @@ body{
 }
 
 .row1{
-   margin-top: 8px; 
+   padding: 8px 0px 40px 0px; 
    display: flex; 
    justify-content: flex-start;
    padding-left: 29px;
    gap: 20px;
+   background-color: #121212;
 }
 
 
@@ -261,14 +264,16 @@ body{
 
 .row2 {
     display: flex;
-    padding-top: 20px;
-    padding-left: 20px;
-    gap: 20px;
+    padding: 60px 20px 50px 40px;
+    gap: 50px;
+    background-color: #282828;
 }
 
 .row2 > * {
-    border: solid 2px white;
+    /* border: solid 2px white; */
     background-color: #121212;
+    box-shadow: 7px 7px 8px #720e9e,-7px -7px 8px #720e9e;
+    
 }
 
 
@@ -285,6 +290,7 @@ body{
 }
 
 #ele22{
+    max-width: 350px;
     padding: 15px 30px 10px 30px;
 }
 
