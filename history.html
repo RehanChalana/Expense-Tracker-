@@ -21,9 +21,61 @@
 
 </div>
 
+
+
+
+
     <div class="history">
         <div id="historyTitle">Expense History</div>
-        <div id="history options">
+
+
+        <div class="walDetails">
+          <div class="balance">
+            <div class="walTextBox">
+              <div class="balanceText">
+                Your Balance
+              </div>
+          
+              <div class="balanceAmount">
+                Rs 0000.00
+              </div>
+            </div>
+
+            <i  class="fa-solid fa-wallet icon "></i>
+            
+          </div>
+        
+          <div class="expense">
+            <div class="walTextBox">
+              <div class="expenseText">
+                Your Expense
+              </div>
+          
+              <div class="expenseAmount">
+                Rs 0000.00
+              </div>
+            </div>
+            <i  class="fa-solid fa-cart-shopping icon "></i>
+          </div>
+        
+          <div class="budget">
+            <div class="walTextBox">
+              <div class="budgetText">
+                Your budget
+              </div>
+          
+              <div class="budgetAmount">
+                Rs 0000.00
+              </div>
+            </div>
+            <i  class="fa-solid fa-piggy-bank icon  "></i>
+          </div>
+        </div>
+        
+        
+        
+
+        <div id="historyOptions">
           <button  class="historyBtn" id="downloadBtn">Download As PDF</button>
           <button class="historyBtn" id="exportToExcel">Export to Excel</button>
           <button class="historyBtn" id="exportToCSV">Export to CSV</button>
@@ -60,6 +112,7 @@
       </div>
     
 </body>
+<script src="https://kit.fontawesome.com/0010a0ae9f.js" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
 <script type="module" src="./history.js"></script>
 <script type="module" src="./download.js"></script>

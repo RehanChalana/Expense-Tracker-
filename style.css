@@ -12,6 +12,7 @@ div,img{
     background-image: url(./images/black-elegant-background-with-copy-space.jpg);
     background-repeat: repeat;
     background-size: cover;
+    background-color: #121212;
  }
 
 
@@ -22,8 +23,9 @@ div,img{
     background-color: #f1f1f1;
     position: fixed;
     height: 100%;
-    overflow: auto;
+    /* overflow: auto; */
     background-color: #121212;
+    border-right: 3px solid #720e9e;
 }
 
 .sideBar{
@@ -153,6 +155,8 @@ div,img{
 }
 .graph {
     padding: 10px;
+    /* background-color: #282828; */
+    /* box-shadow: 7px 7px 8px #720e9e,-7px -7px 8px #720e9e; */
 }
 .progGraph {
     /* padding: 16px 20px 16px 20px; */
@@ -201,9 +205,6 @@ div,img{
     display: flex;
 }
 
-.addTrans {
-    flex-direction: column;
-}
 
 #col2 {
     flex-grow:3 ;
@@ -312,9 +313,14 @@ h2 {
     padding: 20px;
     /* background-color: aqua; */
     gap: 8px;
-    border:solid white ;
-    
+    /* border:solid white ; */
+    flex-direction: column;
+    background-color: #252525; 
+    box-shadow: 6px 6px 4px #720e9e,-6px -6px 2px #720e9e; 
 }
+    
+
+    
 
 .addTrans > input,select,button {
     padding-top: 10px;
