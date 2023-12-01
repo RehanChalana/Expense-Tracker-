@@ -66,3 +66,33 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 // making stat elements having loading animation
+
+
+
+
+// making reviews scroallable !
+var currentIndex = 0;
+var totalReviews = document.querySelectorAll('.review').length;
+var reviewsContainer = document.querySelector('.reviewsContainer');
+
+function showReview(index) {
+  var newTransformValue = -index * 1900 + 'px';
+  reviewsContainer.style.transform = 'translateX(' + newTransformValue + ')';
+}
+
+function nextReview() {
+  currentIndex = (currentIndex + 1) % totalReviews;
+  showReview(currentIndex);
+}
+
+function prevReview() {
+  currentIndex = (currentIndex - 1 + totalReviews) % totalReviews;
+  showReview(currentIndex);
+}
+
+var autoChangeInterval = setInterval(nextReview, 5000);
+
+function resetInterval() {
+  clearInterval(autoChangeInterval);
+  autoChangeInterval = setInterval(nextReview, 5000);
+}

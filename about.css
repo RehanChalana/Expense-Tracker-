@@ -230,26 +230,24 @@
 }
 
 .reviewBox{
-    padding: 30px 100px 100px 140px;
+    padding: 30px 0px 100px 0px;
     display: flex;
-    flex-direction: row;
-    /* align-items: center; */
     background-color: #121212;
     color:white;
-    /* width: 100vh; */
     overflow: hidden;
-    
+    width: 100%; 
 }
 
-/* .slider{
-    flex: 0 0 100%;
+.reviewsContainer {
+    /* overflow: hidden; */
+    display: flex;
     transition: transform 0.5s ease-in-out;
-    white-space: nowrap;
-} */
+    gap:950px;
+    padding-left: 280px;
+}
 
 .review{
-    flex-shrink: 0;
-    display: flex;
+    flex: 0 0 auto;
     margin-top: 50px;
     width: 950px;
     background-color: #282828;
@@ -259,9 +257,20 @@
 
 .reviewTitle{
     text-align: center;
-    font-size: 40px;
+    font-size: 50px;
     font-weight: 750;
     color: #720e9e;
+    background-color: #121212;
+    padding: 40px 0px 0px 0px;
+}
+
+.reviewSubtext{
+    padding-top:10px ;
+    background-color: #121212;
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 550;
 }
 
 .reviewIcons{
@@ -279,11 +288,6 @@
     padding: 30px 40px 30px 40px;
     font-size: larger;
     font-weight: 550;
-    
-}
-
-#reviewImg{
-    max-height: 250px;
 }
 
 .reviewName{
