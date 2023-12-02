@@ -12,7 +12,6 @@ body{
     background-color: #f1f1f1;
     position: fixed;
     height: 100%;
-    /* overflow: auto; */
     background-color: #121212;
     border-right: 3px solid #720e9e;
     top:0px;
@@ -89,12 +88,15 @@ body{
 .walDetails{
     display: flex;
     padding: 25px 20px 25px 60px;
-    gap:120px;
+    gap:20px;
+    flex-direction: column;
+    position:fixed;
     /* background-color: #121212; */
 }
 
 .walDetails>div{
     background-color: #282828;
+    max-width: 350px;
 }
 
 .balance,.expense,.budget{
@@ -153,21 +155,23 @@ body{
     gap: 5px;
     min-width: 280px;
     box-shadow: 6px 6px 4px #720e9e,-6px -6px 2px #720e9e; 
+    position: fixed;
 }
 
 .row2{
     display: flex;
     /* border: 2px solid red; */
     padding: 20px 10px 20px 36px;
-    gap: 35px;
+    gap: 32px;
 }
 
 .row2TextBox{
-    max-width: 850px;
+    max-width: 870px;
     display: flex;
     align-items: center;
     background-color: #121212;
     box-shadow: 6px 6px 4px #720e9e,-6px -6px 2px #720e9e; 
+    margin-left: 370px;
 }
 
 .row2text{
@@ -197,45 +201,9 @@ body{
     background-color: green;
 }
 
-#historyTable{
-    margin-top: 30px;
-    margin-right: 55px;
-    margin-left: 30px;
-    /* padding:30px; */
-    display: flex;
-    /* justify-content: center; */
-    /* background-color: #121212; */
-    /* justify-content: center; */
-    /* position:fixed; */
-    /* border-bottom: #f1f1f1 2px solid; */
-    /* border: 2px white solid; */
-}
 
-#historyTable > div {
-    background-color: #121212;
-    font-weight: bold;   
-    /* flex-grow: 0;  */
-    flex-shrink: 0;
-}
 
-#historyTable > div > div{
-    padding: 2px 47px 2px 46px;
-    border-bottom: #f1f1f1 1px solid;
-    flex-wrap: nowrap;
-}
 
-.historycolTitle{
-    font-size: 40px;
-    color: #121212;
-    background-color: #720e9e;
-}
-
-.historycolElement{
-    padding-left:5px ;
-    opacity: 0.8;
-    font-size: 25px;
-    transition: ease 250ms;
-}
 
 .fa-download{
     font-size: 80px;
@@ -243,12 +211,82 @@ body{
     color: #3CB043;
 }
 
-.col4 > .historycolTitle{
-    padding: 2px 20px 2px 20px;
+#historyTable{
+    padding: 0px 40px 20px 30px;
+    flex-grow: 1.5;
+    margin-right: 150px;
+    margin-left: 410px;
+    background-color: #121212;
+    box-shadow: 6px 6px 4px #404040,-6px -6px 2px #404040; 
+    margin-top:24px;
 }
 
-
-
-.historycolElement:hover{
+.historyHeading{
+    text-align: center;
+    font-size: 40px;
+    font-weight: 700;
+    color: #9932cc;
+    padding-top: 20px;
+    padding-bottom: 20px;
     opacity: 1;
+}
+
+.historyRow{
+    display: flex;
+    justify-content: space-between;
+    padding: 2px 20px 2px 20px;
+    border-top: 1px solid white ;
+    border-bottom:1px solid white ;
+}
+
+.historyIcon{
+    font-size: 50px;
+    padding: 10px 20px 10px 20px;
+}
+
+.historyText{
+    padding-top:10px ;
+}
+
+.historyTitle{
+    font-size: 29px;
+    font-weight: 700;
+}
+
+.historyLeft{
+    display: flex;
+    /* flex-direction: column; */
+    /* max-width:250px; */
+   
+}
+
+.historyRight{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.category{
+    font-size: larger;
+    color: white;
+    opacity: 60%;
+}
+
+.historyDate{
+    opacity: 60%;
+}
+
+.historyRight{
+    padding: 18px 0px 10px 0px;
+}
+
+.historyAmount{
+    font-size: 28px;
+    font-weight: 700;
+    color: #D22B2B;
+}
+
+.row3{
+    display: flex;
+    /* align-items: center; */
 }
