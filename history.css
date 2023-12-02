@@ -111,6 +111,7 @@ body{
     font-size: 50px;
     padding: 0px 20px 0px 0px;
 }
+
 .balanceText,.expenseText,.budgetText{
     font-size: 16px;
     padding: 16px 10px 10px 25px;
@@ -150,10 +151,10 @@ body{
 #historyOptions{
     background-color: #121212;
     margin-left: 14px;
-    padding: 20px 20px 10px 20px;
+    padding: 20px 20px 20px 20px;
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 8px;
     min-width: 280px;
     box-shadow: 6px 6px 4px #720e9e,-6px -6px 2px #720e9e; 
     position: fixed;
@@ -186,6 +187,8 @@ body{
     font-size: 20px;
     font-weight: bolder;
     /* background-color: #720e9e; */
+    /* box-shadow: 6px 6px 4px #720e9e,-6px -6px 2px #720e9e; */
+    transition: all 250ms ease-in-out ;
 }
 
 .row2Title{
@@ -195,11 +198,48 @@ body{
 }
 
 #downloadBtn{
+    /* background-color: red; */
+    border: 2px red solid;
+    color: red;
+}
+
+#downloadBtn:hover{
+    color: white;
     background-color: red;
+    opacity: 0.9;
+    cursor: pointer;
+    font-size: 24px;
 }
 
 #exportToExcel{
+    /* background-color: green; */
+    border: 2px green solid;
+    color: green;
+
+}
+
+#exportToExcel:hover{
+    color: white;
     background-color: green;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+#exportToCSV{
+    color: white;
+    border: 2px solid white;
+}
+
+#exportToCSV:hover{
+    color: white;
+    background-color:#720e9e;
+    border: #720e9e 2px solid;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.fa-file-arrow-down{
+    padding: 0px 10px 0px 0px;
 }
 
 
