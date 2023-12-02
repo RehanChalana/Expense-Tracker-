@@ -49,21 +49,43 @@
 
 #loginBtn,#registerBtn{
 
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 500;
-    color: white;
+    /* color: white; */
     border-radius: 7px;
+    transition: all 250ms ease-in-out;
 }
 
 #loginBtn{
     padding: 8px 20px 8px 20px;
-    background-color: #43ba7f;
+    /* background-color: #43ba7f; */
+    border: #43ba7f 2px solid;
+    color: #43ba7f;  
 }
+
+#loginBtn:hover{
+    background-color: #43ba7f;
+    color: white;
+    font-size:24px ;
+    padding: 10px 23px 10px 23px;
+}
+
 
 #registerBtn{
     padding: 8px 15px 8px 15px;
-    background-color: #ff511a;
+    /* background-color: #ff511a; */
+    border: 2px solid #ff511a;
+    color: #ff511a;
 }
+
+#registerBtn:hover{
+    background-color: #ff511a;
+    color: white;
+    font-size: 24px;
+    padding: 10px 17px 10px 17px;
+}
+
+
 
 .featuresBox{
     padding: 70px 100px 100px 110px;
