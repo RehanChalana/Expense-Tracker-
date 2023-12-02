@@ -5,6 +5,27 @@ console.log(getUserDetails.data[0]);
 let user_id = sessionStorage.getItem("user_id");
 let historyData = await database.from("ExpenseHistory").select("Amount,Date,category,Title").eq("user_id",user_id);
 
+// updating waldetails values
+
+let userData = await database.from("users").select("Budget,userBalance").eq("user_id",user_id);
+const BUDGET = userData.data[0]["Budget"];
+let Balance = userData.data[0]["userBalance"];
+let expense = BUDGET-Balance;
+
+document.querySelector(".budgetAmount").innerText = "Rs "+BUDGET;
+document.querySelector(".expenseAmount").innerText = "Rs "+expense;
+document.querySelector(".balanceAmount").innerText = "Rs " + Balance;
+
+
+
+
+
+
+
+
+
+
+
 let historyTable = document.querySelector("#historyTable");
 
 for(let i=0;i<historyData.data.length;i++){
@@ -38,7 +59,7 @@ for(let i=0;i<historyData.data.length;i++){
       tempIcon.classList.add('fa-solid','fa-cookie-bite','historyIcon');
     } 
     else if(historyData.data[i]['category'].localeCompare("Travel")==0){
-      tempIcon.classList.add('fa-solid','fa-plane','historyIcon');
+      tempIcon.classList.add('fa-solid','fa-suitcase-rolling','historyIcon');
     } 
     else if(historyData.data[i]['category'].localeCompare("Educational")==0){
       tempIcon.classList.add('fa-solid','fa-user-graduate','historyIcon');

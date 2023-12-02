@@ -87,7 +87,7 @@ body{
 
 .walDetails{
     display: flex;
-    padding: 25px 20px 25px 60px;
+    padding: 25px 20px 25px 55px;
     gap:20px;
     flex-direction: column;
     position:fixed;
@@ -102,6 +102,7 @@ body{
 .balance,.expense,.budget{
     display: flex;
     align-items: center;
+    justify-content: space-between;
     box-shadow: 6px 6px 4px #720e9e,-6px -6px 2px #720e9e; 
 }
 
@@ -237,6 +238,12 @@ body{
     padding: 2px 20px 2px 20px;
     border-top: 1px solid white ;
     border-bottom:1px solid white ;
+    transition: all 250ms ease-in-out;
+}
+
+.historyRow:hover{
+    background-color: #404040;
+    padding: 6px 27px 6px 27px;
 }
 
 .historyIcon{
