@@ -33,7 +33,26 @@ for(let i=0;i<historyData.data.length;i++){
     tempTextBox.appendChild(tempTitleDiv);
     tempTextBox.appendChild(tempCategoryDiv);
     let tempIcon = document.createElement('i');
-    tempIcon.classList.add('fa-solid','fa-user','historyIcon');
+
+    if(historyData.data[i]['category'].localeCompare("Snacks")==0){
+      tempIcon.classList.add('fa-solid','fa-cookie-bite','historyIcon');
+    } 
+    else if(historyData.data[i]['category'].localeCompare("Travel")==0){
+      tempIcon.classList.add('fa-solid','fa-plane','historyIcon');
+    } 
+    else if(historyData.data[i]['category'].localeCompare("Educational")==0){
+      tempIcon.classList.add('fa-solid','fa-user-graduate','historyIcon');
+    } 
+    else if(historyData.data[i]['category'].localeCompare("Food")==0){
+      tempIcon.classList.add('fa-solid','fa-utensils','historyIcon');
+    } 
+    else if(historyData.data[i]['category'].localeCompare("Subscriptions")==0){
+      tempIcon.classList.add('fa-solid','fa-calendar','historyIcon');
+    } 
+    else if(historyData.data[i]['category'].localeCompare("Clothing")==0){
+      tempIcon.classList.add('fa-solid','fa-shirt','historyIcon');
+    } 
+  
     tempLeft.appendChild(tempIcon);
     tempLeft.appendChild(tempTextBox);
     tempRow.appendChild(tempLeft);
