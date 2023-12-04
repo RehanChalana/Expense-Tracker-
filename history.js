@@ -8,7 +8,7 @@ let historyData = await database.from("ExpenseHistory").select("Amount,Date,cate
 // updating waldetails values
 
 let userData = await database.from("users").select("Budget,userBalance").eq("user_id",user_id);
-const BUDGET = userData.data[0]["Budget"];
+let BUDGET = userData.data[0]["Budget"];
 let Balance = userData.data[0]["userBalance"];
 let expense = BUDGET-Balance;
 
