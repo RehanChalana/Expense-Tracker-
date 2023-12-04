@@ -1,0 +1,122 @@
+.sidenav {
+  color: white;
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    background-color: #282828;
+    overflow-x: hidden;
+    transition: 0.5s;
+    /* padding-top: 30px; */
+    margin-left: 72px;
+    border: #720e9e 2px solid;
+    display: flex;
+    flex-direction: column;
+    font-family: 'poppins',sans-serif;
+  }
+
+  .closenav{
+    align-self: flex-end;
+    font-size: 35px;
+    margin-right: 20px;
+    padding-bottom:6px ;
+  }
+
+  #navTitle{
+    padding: 8px 0px 8px 10px;
+    display: flex;
+    font-size: 40px;
+    /* align-self: center; */
+    font-weight: 700;
+    border-bottom: 2px solid #720e9e;
+    justify-content: space-between;
+    align-items: center;
+
+  }
+
+  #navUserName{
+    padding-top: 4px;
+    font-size: 18px;
+    align-self: center;
+    font-weight: 700;
+  }
+
+  .usernav{
+    margin-top: 20px;
+    align-self: center;
+    font-size: 60px;
+    color: #720e9e;
+  }
+
+  .generalSettings{
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    padding: 0px 60px 10px 60px;
+  }
+  .generalTitle,.limitTitle{
+    margin-top: 10px;
+    font-size: 35px;
+    font-weight: 700;
+    align-self: center;
+    padding: 5px 0px 20px 0px;
+  }
+
+  .changePasswordHeading,.changeBudgetDiv,.limitSubTitle{
+    font-size: 20px;
+    font-weight: 650;
+    padding: 10px 0px 10px 0px;
+  }
+
+  label{
+    padding: 5px 0px 5px 0px;
+  }
+
+  input , #selection{
+    padding: 7px 5px 7px 5px;
+    background-color: black;
+    border: 1px white solid;
+    font-size: 15px;
+  }
+
+  #selection{
+    margin-bottom:5px ;
+    background-color: black;
+    color: white;
+  }
+
+  .selectOption{
+    color: white;
+  }
+
+  .limitSettings{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .submitBtnNav{
+    font-size: 20px;
+    align-self: flex-start;
+    margin-top: 8px;
+    border: 2px solid #ff511a;
+    color: #ff511a;
+    padding: 5px 10px 5px 10px;
+    background-color: black;
+    opacity: 0.8;
+    transition:all 250ms ease-in-out ;
+    border-radius: 10px;
+  }
+
+  .submitBtnNav:hover{
+    font-size: 22px;
+    color: white;
+    font-weight: 650;
+    background-color: #ff511a;
+    opacity: 1;
+    cursor: pointer;
+  }
+
+  

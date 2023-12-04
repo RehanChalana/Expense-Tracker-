@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./analysis.css">
+  <link rel="stylesheet" href="./sidenav.css">
   <title>Expense Analysis</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
@@ -19,6 +20,89 @@
       </div>
       <div id="endSideBar"><a><img id="settingIcon" src="./images/icons8-setting-64.png"></a></div>
     </div>
+
+    <div class="sidenav">
+  
+      <div id="navTitle">
+        <div class="navTitleText">
+          User Settings!
+        </div>
+        <i  class="fa-solid fa-close closenav"></i>
+      </div>
+    
+      <i  class="fa-solid fa-circle-user usernav"></i>
+      <div id="navUserName">username</div>
+    
+      <div class="generalSettings">
+        <div class="generalTitle">
+          general Settings
+        </div>
+        <div class="changeBudgetDiv">
+          Change your Budget
+        </div>
+        <input type="number" placeholder="change your budget">
+        <div class="submitBtnNav">Submit</div>
+        <div class="changePasswordHeading">
+          Change your password
+        </div>
+        <label>Enter current password</label>
+        <input type="password" placeholder="current password">
+        <label>Enter new password</label>
+        <input type="password" placeholder="new password">
+        <label>Confirm Your Password</label>
+        <input type="password" placeholder="confirm password">
+        <div class="submitBtnNav">Submit</div>
+        
+    
+        <div class="limitSettings">
+          <div class="limitTitle">
+            Set your spending limits
+          </div>
+          <div class="limitSubTitle">Set your daily limit</div>
+          <input placeholder="daily limit">
+          <div class="limitSubTitle">Set your monthly limit</div>
+          <input placeholder="monthly limit"> 
+          <div class="limitSubTitle">
+            Set your First category limit
+          </div>
+          <select id="selection" >
+            <option class="selectOption" disabled selected value> -- select an option -- </option>
+            <option class="selectOption">Travel</option>
+            <option class="selectOption">Snacks</option>
+            <option class="selectOption">Clothing</option>
+            <option class="selectOption">Educational</option>
+            <option class="selectOption">Food</option>
+            <option class="selectOption">Subscriptions</option>
+        </select>
+        <input placeholder="limitAmount">
+        
+    
+    
+        <div class="limitSubTitle">
+          Set your Second category limit
+        </div>
+    
+        <select id="selection" >
+          <option class="selectOption" disabled selected value> -- select an option -- </option>
+          <option class="selectOption">Travel</option>
+          <option class="selectOption">Snacks</option>
+          <option class="selectOption">Clothing</option>
+          <option class="selectOption">Educational</option>
+          <option class="selectOption">Food</option>
+          <option class="selectOption">Subscriptions</option>
+      </select>
+      <input placeholder="limitAmount">
+      <div class="submitBtnNav">Submit</div>
+    
+    
+        </div>
+    
+    
+      </div>
+      
+    
+    </div>
+
     <div class="mainArea">
       <div class="header1">
       </div>
@@ -91,6 +175,8 @@
         </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+<script src="https://kit.fontawesome.com/0010a0ae9f.js" crossorigin="anonymous"></script>
 <script type="module" src="./analysis.js"></script>
 <script type="module" src="./download.js"></script>
+<script type="module" src="./sidenav.js"></script>
 </html>
