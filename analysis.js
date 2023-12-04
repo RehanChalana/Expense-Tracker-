@@ -20,7 +20,7 @@ const monthly = document.querySelector("#monthly");
 daily.addEventListener("click",selectDaily);
 weekly.addEventListener("click",selectWeekly);
 monthly.addEventListener("click",selectMonthly);
-monthly.addEventListener("click",updatemonthlygraph)
+// monthly.addEventListener("click",updatemonthlygraph)
 let dailyAfter = document.styleSheets[0].cssRules[17];
 let weeklyAfter = document.styleSheets[0].cssRules[20];
 let monthlyAfter = document.styleSheets[0].cssRules[22];
@@ -160,10 +160,7 @@ var barGraph = new Chart(barGraphdiv, {
 });
 
 
-// updating data monthly
-function updatemonthlygraph(){
-  barGraphdiv.clearRect(0, 0, canvas.width, canvas.height);
-}
+
 
 // reteriving category wise data 
 
@@ -212,8 +209,6 @@ for(let i = 0; i<categoryCountArray.length;i++){
 
 
 // ploting the horizontal bargraph!
-
-
 const labels2 = categoryArray.slice(-3);
 const data2 = {
   labels: labels2,
@@ -277,4 +272,23 @@ const categoryGraph = new Chart(categoryGraphDiv,{
 })
 
 
-// making rows hoverable 
+// updating limits !
+const limits = await database.from("users").select("dailyLimit,monthlyLimit").eq("walletname",username);
+let dailySpent = 0;
+let monthlySpent = 0;
+let tempDate = historyData.data[historyData.data.length-1]["Date"];
+let tempMonth = tempDate.slice(5,7);
+console.log(tempDate,tempMonth);
+for(let i=0;i<historyData.data.length;i++){
+  if(tempDate==historyData.data[i]["Date"]){
+    dailySpent+=historyData.data[i]["Amount"];
+  }
+  if(historyData.data[i]["Date"].slice(5,7)==tempMonth){
+    monthlySpent+=historyData.data[i]["Amount"];
+  }
+}
+console.log(monthlySpent);
+
+
+document.querySelector(".dailyLimit").style.setProperty('--p',(dailySpent/limits.data[0]["dailyLimit"])*100);
+document.querySelector(".monthlyLimit").style.setProperty('--p',(monthlySpent/limits.data[0]["monthlyLimit"])*100);
