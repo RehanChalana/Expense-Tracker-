@@ -40,18 +40,18 @@
         <div class="changeBudgetDiv">
           Change your Budget
         </div>
-        <input type="number" placeholder="change your budget">
-        <div class="submitBtnNav">Submit</div>
+        <input id="changeBudgetIn" type="number" placeholder="change your budget">
+        <div id="changeBudgetBtn" class="submitBtnNav">Submit</div>
         <div class="changePasswordHeading">
           Change your password
         </div>
         <label>Enter current password</label>
-        <input type="password" placeholder="current password">
+        <input id="curPassword" type="password" placeholder="current password">
         <label>Enter new password</label>
         <input type="password" placeholder="new password">
         <label>Confirm Your Password</label>
         <input type="password" placeholder="confirm password">
-        <div class="submitBtnNav">Submit</div>
+        <div id="changePasswordBtn" class="submitBtnNav">Submit</div>
         
     
         <div class="limitSettings">
@@ -59,9 +59,9 @@
             Set your spending limits
           </div>
           <div class="limitSubTitle">Set your daily limit</div>
-          <input placeholder="daily limit">
+          <input id="dailyIn" placeholder="daily limit">
           <div class="limitSubTitle">Set your monthly limit</div>
-          <input placeholder="monthly limit"> 
+          <input id="monthlyIn" placeholder="monthly limit"> 
           <div class="limitSubTitle">
             Set your First category limit
           </div>
@@ -92,7 +92,7 @@
           <option class="selectOption">Subscriptions</option>
       </select>
       <input placeholder="limitAmount">
-      <div class="submitBtnNav">Submit</div>
+      <div id="submitLimitData" class="submitBtnNav">Submit</div>
     
     
         </div>
