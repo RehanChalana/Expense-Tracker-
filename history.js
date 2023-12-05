@@ -77,12 +77,10 @@ for(let i=0;i<historyData.data.length;i++){
     tempLeft.appendChild(tempIcon);
     tempLeft.appendChild(tempTextBox);
     tempRow.appendChild(tempLeft);
-    historyTable.appendChild(tempRow);
-
-
     tempRight.appendChild(tempAmountDiv);
     tempRight.appendChild(tempDateDiv);
     tempRow.appendChild(tempRight);
+    historyTable.insertBefore(tempRow,historyTable.children[2]);
     
     
 
