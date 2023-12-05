@@ -10,42 +10,28 @@ const BUDGET = budgetImport.data[0]["Budget"];
 
 
 
-
-
 //making the daily weekly yearly clickable 
 const daily = document.querySelector("#daily");
-const weekly = document.querySelector("#weekly");
 const monthly = document.querySelector("#monthly");
+let isDaily = true;
+let isMonthly = false;
 
 daily.addEventListener("click",selectDaily);
-weekly.addEventListener("click",selectWeekly);
 monthly.addEventListener("click",selectMonthly);
-// monthly.addEventListener("click",updatemonthlygraph)
+
+
 let dailyAfter = document.styleSheets[0].cssRules[17];
 let weeklyAfter = document.styleSheets[0].cssRules[20];
 let monthlyAfter = document.styleSheets[0].cssRules[22];
+selectDaily();
 function selectDaily(){
   dailyAfter.style.width="95%";
   weeklyAfter.style.width="0%";
   monthlyAfter.style.width="0%";
   daily.style.opacity="1";
   daily.style.fontSize="50px"; 
-  weekly.style.opacity="0.6";
-  weekly.style.fontSize="40px";
   monthly.style.opacity="0.6";
   monthly.style.fontSize="40px";
-}
-
-function selectWeekly(){
-  weeklyAfter.style.width="95%";
-  monthlyAfter.style.width="0%";
-  dailyAfter.style.width="0%";
-  weekly.style.opacity="1";
-  weekly.style.fontSize="50px"; 
-  daily.style.fontSize="40px";
-  daily.style.opacity="0.6";
-  monthly.style.fontSize="40px";
-  monthly.style.opacity="0.6";
 }
 
 function selectMonthly(){
@@ -54,10 +40,10 @@ function selectMonthly(){
   weeklyAfter.style.width="0%";
   monthly.style.opacity="1";
   monthly.style.fontSize="50px";
-  weekly.style.opacity="0.6";
-  weekly.style.fontSize="40px";
   daily.style.opacity="0.6"
   daily.style.fontSize="40px";
+  isDaily = false;
+  isMonthly = true;
 }
 
 
@@ -80,16 +66,17 @@ if(expensePercentage < 10){
 document.getElementById('progGraph').style.backgroundImage=`radial-gradient(closest-side, black 79%, transparent 80%),conic-gradient(#720e9e ${parseFloat(expensePercentage)}%, white 0)`;
 
 
-
-// ploting the main graph! day wise
 let user_id = sessionStorage.getItem("user_id");
 let historyData = await database.from("ExpenseHistory").select("Amount,Date,category,Title").eq("user_id",user_id);
+
+// ploting the main graph! day wise
+
 console.log("historyData")
 console.log(historyData);
 let dayarray = [];
 let dayAmountArray = [];
-let monthdata = {"01":0,"02":0,"03":0,"04":0,"05":0,"06":0,"07":0,"08":0,"09":0,"10":0,"11":0,"12":0}
-
+// let monthdata = {"01":0,"02":0,"03":0,"04":0,"05":0,"06":0,"07":0,"08":0,"09":0,"10":0,"11":0,"12":0};
+let monthlyValues = [0,0,0,0,0,0,0,0,0,0,0,0];
 for(let i = 0; i < historyData.data.length;i++){
   if(!dayarray.includes(historyData.data[i]["Date"])){
     let sum = 0;
@@ -99,20 +86,21 @@ for(let i = 0; i < historyData.data.length;i++){
         sum+=historyData.data[j]["Amount"];
       }
     }
-    monthdata[historyData.data[i]["Date"].slice(5,7)]+=historyData.data[i]["Amount"];
+    if(historyData.data[i]["Date"].slice(5,7))
+    monthlyValues[parseInt(historyData.data[i]["Date"].slice(5,7),10)-1]+=historyData.data[i]["Amount"];
     dayarray.push(historyData.data[i]["Date"]);
     dayAmountArray.push(sum);
   }
 }
-console.log("month data")
-console.log(Object.keys(monthdata))
+console.log("month data");
+console.log(monthlyValues);
 console.log(historyData);
 
 let labels = dayarray.slice(-7);
 const data = {
   labels: labels,
   datasets: [{
-    label: 'Amount spent on date',
+    label: 'Amount spent',
     data: dayAmountArray.slice(-7),
     backgroundColor: '#720e9e',
     borderWidth: 1
@@ -158,6 +146,35 @@ var barGraph = new Chart(barGraphdiv, {
      }
   }
 });
+
+window.updateDailyGraph = function () {
+  var newLabels = dayarray.slice(-7);
+  var newData = dayAmountArray.slice(-7);
+
+  barGraph.data.datasets[0].data = newData;
+  barGraph.data.labels = newLabels;
+
+  barGraph.update();
+}
+daily.addEventListener("click",updateDailyGraph);
+
+window.updatemonthlygraph = function () {
+  // Generate new data (replace this with your logic to get new data)
+  var newData = monthlyValues;
+  var newLabels = ["jan","feb","March","April","May","June","July","August","September","October","November","December"]
+  
+  // Update the chart data
+  barGraph.data.datasets[0].data = newData;
+  barGraph.data.labels = newLabels;
+
+  // Update the chart
+  barGraph.update();
+};
+
+monthly.addEventListener("click",updatemonthlygraph);
+
+
+
 
 
 
@@ -289,6 +306,16 @@ for(let i=0;i<historyData.data.length;i++){
 }
 console.log(monthlySpent);
 
+let dailyLimit =  Math.round((dailySpent/limits.data[0]["dailyLimit"])*100);
+let monthlyLimit = Math.round((monthlySpent/limits.data[0]["monthlyLimit"])*100);
+if(dailyLimit>100){
+  dailyLimit=100;
+}
+if(monthlyLimit>100){
+  monthlyLimit=100
+}
 
-document.querySelector(".dailyLimit").style.setProperty('--p',(dailySpent/limits.data[0]["dailyLimit"])*100);
-document.querySelector(".monthlyLimit").style.setProperty('--p',(monthlySpent/limits.data[0]["monthlyLimit"])*100);
+
+
+document.querySelector(".dailyLimit").style.setProperty('--p',dailyLimit);
+document.querySelector(".monthlyLimit").style.setProperty('--p',monthlyLimit);
