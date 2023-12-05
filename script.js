@@ -29,11 +29,12 @@ updateProgressBar();
 document.querySelector('.blcAmount').innerText = Balance;
 document.querySelector('#budget').innerText = BUDGET;
 document.querySelector("#addExpense").addEventListener("click",findInput);
-document.querySelector("#addExpense").addEventListener("click",changeBalance);
-document.querySelector("#addExpense").addEventListener("click",addExpense);
-document.querySelector("#addExpense").addEventListener("click",exportHistory);
-document.querySelector("#addExpense").addEventListener("click",history);
-document.querySelector("#addExpense").addEventListener("click",updateProgressBar);
+document.querySelector("#addExpense").addEventListener("click",check);
+// document.querySelector("#addExpense").addEventListener("click",changeBalance);
+// document.querySelector("#addExpense").addEventListener("click",addExpense);
+// document.querySelector("#addExpense").addEventListener("click",exportHistory);
+// document.querySelector("#addExpense").addEventListener("click",history);
+// document.querySelector("#addExpense").addEventListener("click",updateProgressBar);
 
 
 // 
@@ -41,9 +42,22 @@ document.querySelector("#addExpense").addEventListener("click",updateProgressBar
 
 function findInput() {
     const inputElement = document.querySelector('.expenseInput').value;
-    // const expense = inputElement.value;
+    const expense = inputElement.value;
     return inputElement;
 };
+
+function check(){
+    if(Balance-findInput()<0){
+        alert("This transaction will pass Budget!!!!")
+        return;
+    } else{
+        changeBalance();
+        addExpense();
+        exportHistory();
+        history();
+        updateProgressBar();
+    }
+}
 
 async function changeBalance() {
     Balance = eval(Balance + '-' + findInput());

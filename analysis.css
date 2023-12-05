@@ -2,9 +2,9 @@
     padding: 0;
     margin: 0;
 }
-div,img{
-/* border: 2px red solid; */
-}
+/* div,img{
+border: 2px red solid;
+} */
 
 body{
     display: flex;
@@ -388,6 +388,47 @@ body{
     to {
       width: var(--width);
     }
+  }
+
+  .row3{
+    display: flex;
+    padding: 40px 60px 40px 60px;
+    background-color: #121212;
+    gap: 30px;
+    overflow: scroll;
+  }
+
+  .analIconBox{
+    background-color: #404040;
+    padding: 20px 40px 20px 40px;
+  }
+
+  .row3Icon{
+    font-size: 180px;
+    left: 20px;
+    
+  }
+
+  .row3Title{
+    font-size: 21px;
+    font-weight: 600;
+    text-align: center;
+    padding: 5px 8px 5px 8px;
+  }
+
+  .row3Div{
+    box-shadow: 7px 7px 8px #720e9e,-7px -7px 8px #720e9e;
+  }
+
+  .row3text{
+    font-size: 38px;
+    font-weight: 700;
+    text-align:center;
+    padding: 10px 15px 10px 15px;
+  }
+
+  .row3TextBox{
+    background-color: #282828;
   }
 
 

@@ -45,12 +45,6 @@ function selectMonthly(){
   isDaily = false;
   isMonthly = true;
 }
-
-
-
-
-
-
 // updating the progress graph
 
 let totalExpense = BUDGET - Balance;
@@ -225,6 +219,8 @@ for(let i = 0; i<categoryCountArray.length;i++){
 }
 
 
+
+
 // ploting the horizontal bargraph!
 const labels2 = categoryArray.slice(-3);
 const data2 = {
@@ -316,6 +312,12 @@ if(monthlyLimit>100){
 }
 
 
-
 document.querySelector(".dailyLimit").style.setProperty('--p',dailyLimit);
 document.querySelector(".monthlyLimit").style.setProperty('--p',monthlyLimit);
+
+// updating row 3
+let mostSpentCat = categoryArray[categoryValueArray.indexOf(Math.max(...categoryValueArray))];
+let leastSpentCat = categoryArray[categoryValueArray.indexOf(Math.min(...categoryValueArray))];
+let mostSpentMonth = 
+document.querySelector(".mostSpentCatText").innerText=mostSpentCat;
+document.querySelector(".leastSpentCatText").innerText=leastSpentCat;
