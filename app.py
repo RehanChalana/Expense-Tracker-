@@ -10,8 +10,6 @@ app = Flask(__name__)
 CORS(app)
 
 def generate_pdf(data):
-    # Your PDF generation logic here...
-    # Create a PDF document 
     name=data["userData"][0]["walletname"]
     budget=data["userData"][0]["Budget"]
     userBalance=data["userData"][0]["userBalance"]
@@ -46,11 +44,9 @@ def generate_pdf(data):
     return pdf_filename
 
 def generate_xl(data):
-       # Create a new Excel workbook and add a worksheet
     wb = openpyxl.Workbook()
     ws = wb.active
 
-    # Write headers to the worksheet
     headers = ["Title", "Amount", "Date", "Category"]
     for col_num, header in enumerate(headers, 1):
         ws.cell(row=1, column=col_num, value=header)
@@ -69,8 +65,6 @@ def generate_xl(data):
     return xl_filename
 
 def generate_csv(data):
-    # Your CSV generation logic here...
-    # Create a CSV file
     
     csv_filename = "expense_report.csv"
 
